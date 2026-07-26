@@ -2,6 +2,8 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    font-family: monospace;
+    font-size: 15px;
 }
 
 :root{
@@ -99,4 +101,79 @@
 
 .link-list button{
     align-items: center;
+}
+
+.content-container{
+    display: flex;
+    justify-content: center;
+    background-color: var(--black-cont);
+}
+
+.content-box{
+    color: white;
+    flex:1;
+    height: auto;
+    border: 2px solid var(--white-cont);
+    margin: 20px 200px 20px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+}
+
+
+.content-box-text{
+    border: 2px solid var(--white-cont);
+    border-radius: 2px;
+    color: white;
+    flex: 1;
+    margin:10px;
+    padding: 5px;
+    background-color:  var(--black-cont);
+
+}
+.content-box-buttons{
+    border: 2px solid var(--white-cont);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    padding: 10px;
+    background-color:  var(--black-cont);
+}
+.content-box-text textarea{
+    flex:1;
+    background-color: var(--black-cont);
+    color: white;
+    resize: none;
+    appearance: none;
+    outline: none;
+    border: 2x solid var(--white-cont);
+    background: transparent;
+    box-sizing: border-box;
+    height: calc(100% - 20px);
+    width: calc(100% - 5px);
+    display: flex;
+    flex-direction: column;
+}
+
+
+.btns{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
+
+.post-container{
+    display: flex;
+    height: auto;
+     background-color: var(--black-cont);
+     flex-direction: column;
+}
+.post-content{
+    flex: 1;
+    background-color: var(--black-cont);
+     border: 2px solid var(--white-cont);
+     margin: 20px 200px 20px;
+     color: var(--white-cont);
+     padding: 10px;
 }
