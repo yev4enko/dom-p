@@ -8,7 +8,7 @@
 }
 
 
-:root .defoult{
+:root{
     --header-height: 100px;
     --border: #ffab00;
     --border-nav: #86270a;
@@ -19,26 +19,15 @@
 }
 
 :root .style1{
-    --border: #ffab00;
-    --background: #0c1014;
-    --font: ghostwhite;
+    --border: #9cbdb8;
+    --background: #f0e7d6;
+    --font: #0b0c12;
 }
 :root .style2{
-    --border: #ffab00;
-    --background: #0c1014;
-    --font: ghostwhite;
+    --border: #de7a5f;
+    --background: #fff6ed;
+    --font: #5e6e99;
 }
-:root .style3{
-    --border: #ffab00;
-    --background: #0c1014;
-    --font: ghostwhite;
-}
-:root .style4{
-    --border: #ffab00;
-    --background: #0c1014;
-    --font: ghostwhite;
-}
-
 
 /*turnedOffNavbars*/
 .navbar-container,
@@ -47,7 +36,11 @@
 }
 
 /*displayNavbars*/
-.display{
+.open{
+    display: flex;
+}
+
+.obertka.open1 .ddlists{
     display: flex;
 }
 

@@ -3,17 +3,21 @@ const body = document.querySelector("body"),
     navVisible = document.querySelector(".navbar-container"),
     navBtnsAll = document.querySelectorAll(".nav-btn"),
     headerC = document.querySelector(".header-container"),
+    ddlists = document.querySelectorAll(".ddlists"),
+    stylesB = document.querySelector(".styles-b"),
     navC = document.querySelector(".nav-list");
 
 navOpenClose.forEach(function (button) {
     button.addEventListener("click", () => {
-        navVisible.classList.toggle("display")
+        navVisible.classList.toggle("open")
     })
 })
 
 navC.addEventListener("click", (event) => {
-    const elem = event.target.nextElementSibling;
-    if (elem != null && elem.classList.contains("ddlists")) {
-        elem.classList.toggle("display");
-    }
+    const parent = event.target.parentElement;
+    parent.classList.toggle("open1");
 })
+
+stylesB.addEventListener("click", (event) => {
+})
+
