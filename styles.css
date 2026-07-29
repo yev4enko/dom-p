@@ -7,6 +7,9 @@
     text-decoration: none;
 }
 
+body {
+    overflow: hidden;
+}
 
 :root{
     --header-height: 100px;
@@ -16,6 +19,10 @@
     --background-nav: #5e6267;
     --font: ghostwhite;
     --hover-background: #24303d;
+    --sides: 350px;
+    --button-width: 50px;
+    --button-height: 50px;
+    --secret-navbar-width: 300px;
 }
 
 :root .style1{
@@ -29,8 +36,7 @@
     --font: #5e6e99;
 }
 
-/*turnedOffNavbars*/
-.navbar-container,
+
 .ddlists{
     display: none;
 }
@@ -61,21 +67,30 @@
 }
 
 .navbar-container{
-    position:fixed;
-    height: 100%;
-    width: 100%;
-    backdrop-filter: blur(15px);
-}
-
-.nav-background-right{
-    position: absolute;
     display: flex;
     overflow-y: auto;
-    right:0;
-    height: 100%;
+
+    height: calc(100vh - var(--header-height));
     padding: 10px;
 
-    backdrop-filter: blur(15px);
+
+    background-color: var(--background);
+    width: 50px;
+    border: 2px solid var(--border);
+
+    transition: width 0.5s ease;
+}
+.navbar-container::-webkit-scrollbar {
+    width: 10px;
+}
+
+
+.navbar-container:hover{
+    width: calc(var(--sides) - 50px);
+}
+
+.sizing{
+    width: var(--sides);
 }
 
 .nav-list{
@@ -84,6 +99,13 @@
     gap: 10px;
 
     margin-left: 10px;
+    transform: translatex(-250px);
+    transition: transform 0.5s ease;
+
+}
+
+.navbar-container:hover .nav-list{
+    transform: translatex(0);
 }
 
 .ddlists{
@@ -118,16 +140,16 @@
 .nav-toggle{
     background-color: var(--background);
     border: 4px solid var(--border);
-    border-radius: 10px;
+    border-radius: 50px;
     color: var(--font);
 
     text-align: center;
     
     padding: 10px;
-
     height: 50px;
     width: 50px;
 }
+
 
 .nav-btn{
     background-color: var(--background);
@@ -144,4 +166,36 @@
 
 .nav-links{
     gap: 3px;
+}
+
+.content-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.create-see-container{
+    flex:1;
+    background-color: var(--background);
+    border: 2px solid var(--border);
+    height: calc(100vh - var(--header-height));
+
+    color: var(--font);
+}
+
+.posts-container{
+
+    height: calc(100vh - var(--header-height));
+    width: var(--sides);
+    background-color: var(--background);
+    border: 2px solid var(--border);
+
+    color:var(--font);
+}
+
+.post-container{
+    flex:1
+}
+
+.add-post{
+
 }
