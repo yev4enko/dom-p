@@ -38,7 +38,11 @@ postNav.addEventListener("click", (event) => {
 })
 
 const n = ()=> {
-    console.log(getDescr.value);
+    const clear = '';
+    const text = getDescr.value
+    console.log(text);
+    getDescr.value = clear;
+
 }
 apply.addEventListener("click", n)
 
