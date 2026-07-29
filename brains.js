@@ -5,6 +5,15 @@ const body = document.querySelector("body"),
     headerC = document.querySelector(".header-container"),
     ddlists = document.querySelectorAll(".ddlists"),
     stylesB = document.querySelector(".styles-b"),
+    postNav = document.querySelector(".post-nav"),
+    postsCon = document.querySelector(".post-container"),
+
+    getTittle = document.querySelector(".tittle"),
+    getDescr = document.querySelector(".description"),
+
+    cancel = document.querySelector(".cancel"),
+    apply = document.querySelector(".apply"),
+
     navC = document.querySelector(".nav-list");
 
 navOpenClose.forEach(function (button) {
@@ -18,6 +27,18 @@ navC.addEventListener("click", (event) => {
     parent.classList.toggle("open1");
 })
 
-stylesB.addEventListener("click", (event) => {
+
+postNav.addEventListener("click", (event) => {
+    if (event.target.classList.contains("lock2")) {
+        event.target.parentElement.classList.toggle("lock-vertical")
+    }
+    if(event.target.classList.contains("mid1")){
+        postsCon.classList.toggle("visible")
+    }
 })
+
+const n = ()=> {
+    console.log(getDescr.value);
+}
+apply.addEventListener("click", n)
 

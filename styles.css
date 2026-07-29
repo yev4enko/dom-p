@@ -179,10 +179,15 @@ body {
     border: 2px solid var(--border);
     height: calc(100vh - var(--header-height));
 
+    display: flex;
+    flex-direction: row;
+
     color: var(--font);
+     padding: 10px;
+     gap:10px;
 }
 
-.posts-container{
+.recent-posts-container{
 
     height: calc(100vh - var(--header-height));
     width: var(--sides);
@@ -192,10 +197,75 @@ body {
     color:var(--font);
 }
 
-.post-container{
-    flex:1
+.post-nav{
+    overflow: hidden;
+    border: 2px solid var(--border);
+    display: flex;
+    width: fit-content;
+    height: 40px;
+
+    transition: width 0.3s ease;
+    display: flex;
+    flex-direction: column;
 }
 
-.add-post{
+.post-nav:hover{
+    height:100%;
+}
 
+.post-container{
+    overflow: hidden;
+    border: 0px solid var(--border);
+    height: 0px;
+    width: 0px;
+
+    border-radius: 10px;
+    transition: height 0.2s ease, width 0.2s ease, border 0.2s ease, transform 0.2s ease;
+}
+
+.post-container.visible{
+    border: 1px solid var(--border);
+    height: 100%;
+    width: 100%;
+}
+
+
+.lock-vertical{
+    height: 100%;
+}
+
+.lock-horizontal{
+    width: 100%;
+}
+
+.publish-buttons,
+.post-area{
+    display: flex;
+    flex-direction: column;
+}
+
+.publish-buttons{
+    display: flex;
+    flex-direction: row;
+}
+
+.publish-buttons,
+.post-area{
+    transform: translate(-150px, 150px);
+}
+
+.post-container.visible .post-area,
+.post-container.visible .publish-buttons{
+    transform: translateX(0);
+
+}
+
+.publish-buttons,
+.post-area{
+    padding: 10px;
+}
+
+.lock2{
+    height: 40px;
+    width: 40px;
 }

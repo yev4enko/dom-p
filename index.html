@@ -8,7 +8,7 @@
     <script src="brains.js" defer></script>
 </head>
 
-<body>
+<body class="style1">
     <div class="header-container">
         <div class="logo">P.U.B.O.</div>
     </div>
@@ -54,10 +54,26 @@
             </div>
         </nav>
         <div class="create-see-container">
-            <button class="add-post">Create post</button>
-            <div class="post-container"></div>
+            <nav class="post-nav">
+                <img class="lock2"src="./img/menu.png">
+                <button class="btns mid1">a</button>
+                <button class="btns">r</button>
+            </nav>
+            <div class="post-container">
+                <div class="post-area">
+                    <h1>Post Title: max 100 symbols.</h1>
+                    <textarea class="tittle"></textarea>
+                    <h1>Description: max 2500 sybols.</h1>
+                    <textarea class="description"></textarea>
+                    <h1>Add Media</h1>
+                </div>
+                <div class="publish-buttons">
+                    <button class="cancel">Cancel</button>
+                    <button class="apply">Puslish</button>
+                </div>
+            </div>
         </div>
-        <div class="posts-container sizing">1</div>
+        <div class="recent-posts-container sizing">2</div>
     </div>
 </body>
 
