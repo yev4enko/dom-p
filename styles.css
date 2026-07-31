@@ -7,7 +7,6 @@
     text-decoration: none;
 }
 
-
 :root{
     --header-height: 100px;
     --header-border: rgb(93, 93, 93);;
@@ -103,6 +102,22 @@
     align-items: center;
 }
 
+.header-btn i{
+    transition: transform 0.3s ease;
+}
+
+.header-btn:hover{
+    background-color: var(--button-main-hover-color);
+}
+
+.header-btn:hover i{
+    transform: scale(1.1);
+}
+
+.header-btn:hover .fa-gear{
+    transform: rotate(90deg);
+}
+
 .fa-lock,
 .fa-lock-open,
 .fa-gear,
@@ -170,6 +185,13 @@
     border: none;
     border-radius: 10px;
 }
+
+.navbar-container.locked,
+.navbar-container.locked .navbar-visible-elements,
+.navbar-container.locked .navbar-elements{
+    width: var(--side-panels-width);
+    transform: translateX(0);
+}   
 
 .navbar-container:hover,
 .navbar-container:hover .navbar-visible-elements,
