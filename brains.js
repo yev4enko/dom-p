@@ -4,8 +4,9 @@ const mainBody = document.querySelector("body"),
     navigationBar = document.querySelector(".navbar-container"),
     titleInput = document.querySelector(".title-text-area"),
     post = document.querySelector(".post"),
-    descrInput = document.querySelector(".descr-text-area");
-
+    descrInput = document.querySelector(".descr-text-area"),
+    postedPostsContainer = document.querySelector(".posted-posts-container")
+postNoticeWarnming = document.querySelector(".post-notice-varning ");
 const clear = '';
 
 headerContainer.addEventListener("click", (event) => {
@@ -42,14 +43,38 @@ post.addEventListener("click", (event) => {
         descrInput.value = clear;
         titleInput.value = clear;
     }
+    if (event.target.classList.contains("close-post")) {
+        post.classList.add("flex-none");
+    }
+    if (event.target.classList.contains("cancel")) {
+        if (descrInput.value !== clear || titleInput.value !== clear) {
+            postNoticeWarnming.classList.remove("flex-none")
+        } else {
+            post.classList.add("flex-none");
+        }
+    }
+    postNoticeWarnming.addEventListener("click", (event) => {
+        if (event.target.classList.contains("ok")) {
+            postNoticeWarnming.classList.add("flex-none");
+            descrInput.value = clear;
+            titleInput.value = clear;
+            post.classList.add("flex-none");
+        }
+        else if (event.target.classList.contains("back")) {
+            postNoticeWarnming.classList.add("flex-none");
+        }
+    })
 })
 
 descrInput.addEventListener("input", () => {
     const descrWordSum = document.querySelector(".sum");
     const maxLength = 250;
-    const deLength = descrInput.value.length;
-    descrWordSum.textContent = `Total: ${deLength} out of: ${maxLength}`;
-    if (descrInput.value.length > 250) {
-        descrInput.value = descrInput.value.slice(0, 249);
-    }
+    const descrLength = descrInput.value.length;
+    descrWordSum.textContent = `Total: ${descrLength} out of: ${maxLength}`;
 });
+
+postedPostsContainer.addEventListener("click", (event) => {
+    if (event.target.classList.contains("create-post")) {
+        post.classList.remove("flex-none");
+    }
+})

@@ -77,6 +77,10 @@
     flex-direction: column;
 }
 
+.flex-none{
+    display: none;
+}
+
 .header-container{
     justify-content: space-between;
     height: var(--header-height);
@@ -224,7 +228,8 @@
     padding: 10px;
 }
 
-.post{
+.post,
+.post-notice-varning {
     margin-left: auto;
     width: calc(100vw - var(--side-panels-width)*2 - 25px);
     height: fit-content;
@@ -256,3 +261,6 @@
 .descr-text-area{
     height: calc(100% - 50px);
 }
+
+/*NOTICE*//*NOTICE*//*NOTICE*//*NOTICE*//*NOTICE*//*NOTICE*//*NOTICE*//*NOTICE*//*NOTICE*//*NOTICE*//*NOTICE*//*NOTICE*//*NOTICE*//*NOTICE*//*NOTICE*//*NOTICE*//*NOTICE*//*NOTICE*//*NOTICE*//*NOTICE*//*NOTICE*//*NOTICE*//*NOTICE*//*NOTICE*/
+
