@@ -1,7 +1,12 @@
 const mainBody = document.querySelector("body"),
     headerContainer = document.querySelector(".header-container"),
     contentContainer = document.querySelector(".content-container"),
-    navigationBar = document.querySelector(".navbar-container");
+    navigationBar = document.querySelector(".navbar-container"),
+    titleInput = document.querySelector(".title-text-area"),
+    post = document.querySelector(".post"),
+    descrInput = document.querySelector(".descr-text-area");
+
+const clear = '';
 
 headerContainer.addEventListener("click", (event) => {
     console.log(event.target);
@@ -29,3 +34,22 @@ navigationBar.addEventListener("click", (event) => {
         event.target.parentElement.classList.toggle("navbar-list-opener")
     }
 })
+
+post.addEventListener("click", (event) => {
+    if (event.target.classList.contains("send") && descrInput.value !== clear && titleInput.value !== clear) {
+        const inputTitle = titleInput.value
+        const inputDescr = descrInput.value;
+        descrInput.value = clear;
+        titleInput.value = clear;
+    }
+})
+
+descrInput.addEventListener("input", () => {
+    const descrWordSum = document.querySelector(".sum");
+    const maxLength = 250;
+    const deLength = descrInput.value.length;
+    descrWordSum.textContent = `Total: ${deLength} out of: ${maxLength}`;
+    if (descrInput.value.length > 250) {
+        descrInput.value = descrInput.value.slice(0, 249);
+    }
+});
