@@ -64,6 +64,9 @@
     --button-main-hover-color:#b5b5b5; 
     --button-secondarry-hover-color: ;}
 
+title{
+    border-radius: 10px;
+}
 /*RESTYLEINGRESTYLEINGRESTYLEINGRESTYLEINGRESTYLEINGRESTYLEINGRESTYLEINGRESTYLEINGRESTYLEINGRESTYLEINGRESTYLEING*/
 /*HEADER*???*/
 
@@ -220,7 +223,10 @@
     height: calc(100hv - var(--header-height));
 
     border: 2px solid var(--content-border);
-    color:var(--main-font-color)
+    color:var(--main-font-color);
+
+    justify-content: center;
+    padding: 10px;
 }
 
 .post-container{
@@ -263,4 +269,19 @@
 }
 
 /*NOTICE*//*NOTICE*//*NOTICE*//*NOTICE*//*NOTICE*//*NOTICE*//*NOTICE*//*NOTICE*//*NOTICE*//*NOTICE*//*NOTICE*//*NOTICE*//*NOTICE*//*NOTICE*//*NOTICE*//*NOTICE*//*NOTICE*//*NOTICE*//*NOTICE*//*NOTICE*//*NOTICE*//*NOTICE*//*NOTICE*//*NOTICE*/
+
+.posted-post{
+    width: calc(var(--side-panels-width) - 20px); /* note the spaces around - */
+    height: 80px;
+    border: 2px solid var(--content-border);
+    padding: 10px;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.posted-post:hover {
+    background-color: var(--div-main-hover-color);
+}
 

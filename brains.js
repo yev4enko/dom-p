@@ -9,6 +9,8 @@ const mainBody = document.querySelector("body"),
 postNoticeWarnming = document.querySelector(".post-notice-varning ");
 const clear = '';
 
+const posts = document.querySelector(".posts");
+
 headerContainer.addEventListener("click", (event) => {
     console.log(event.target);
     if (event.target.classList.contains("fa-moon")) {
@@ -40,6 +42,7 @@ post.addEventListener("click", (event) => {
     if (event.target.classList.contains("send") && descrInput.value !== clear && titleInput.value !== clear) {
         const inputTitle = titleInput.value
         const inputDescr = descrInput.value;
+        createPost(inputTitle, inputDescr, posts);
         descrInput.value = clear;
         titleInput.value = clear;
     }
@@ -78,3 +81,21 @@ postedPostsContainer.addEventListener("click", (event) => {
         post.classList.remove("flex-none");
     }
 })
+
+function createPost(tittle, description, destinationContainer) {
+    const post = document.createElement('div')
+    const posttittle = document.createElement('h1')
+    const descriptionf = document.createElement('div')
+
+    post.classList.add("posted-post", "flex-column")
+
+    posttittle.textContent = tittle;
+    posttittle.classList.add("post-tittle")
+
+    descriptionf.textContent = description;
+    descriptionf.classList.add("post-descr")
+
+    destinationContainer.appendChild(post)
+    post.appendChild(posttittle)
+    post.appendChild(descriptionf)
+}
