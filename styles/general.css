@@ -1,0 +1,14 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+:root{
+    --header-btn-height: 40px;
+    --header-btn-width: 40px;
+    --content-btn-expand-width: 60px;
+    --content-btn-expand-heigth: 30px;
+
+    --header-cont-heigth: 80px;
+}

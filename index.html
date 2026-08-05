@@ -5,92 +5,23 @@
     <meta charset="UTF-8">
     <title>PostUrBrainsOut||DOM</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="brains.js" defer></script>
+    <script type="module" src="index.js" defer></script>
     <script src="https://kit.fontawesome.com/4f31497266.js" crossorigin="anonymous"></script>
 </head>
 
-<body class="style-black">
-    <div class="header-container flex-row">
-        <div class="logo flex-row">P.U.B.O.</div>
-        <div class="theme-switch flex-row">
-            <button class="header-btn flex-row"><i class="fa-regular fa-moon"></i></button>
-        </div>
-        <div class="settings flex-row">
-            <button class="header-btn flex-row"><i class="fa-solid fa-gear"></i></button>
-        </div>
+<body>
+    <div class="header-container">
+        <div class="logo">.post</div>
+        <ul class="header-buttons">
+            <button title="Nav-Bar" class="header-btn navbar"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+            <button title="Settings" class="header-btn settings"></i> <i class="fa-solid fa-gear"></i></i></button>
+        </ul>
     </div>
-    <div class="content-container flex-row">
-        <nav class="navbar-container flex-row">
-            <div class="navbar-visible-elements flex-column">
-                <div class="nav-links navbar-wraper">
-                    <button class="nav-btn flex-row">.links.d.d</button>
-                    <ul class="nav-list flex-column">
-                        <a target="_blank" href="https://discord.com/">.discord</a>
-                        <a target="_blank" href="https://www.youtube.com/watch?v=dQw4w9WgXcQh">.youtube</a>
-                        <a target="_blank" href="https://github.com/yev4enko/dom-p">.github</a>
-                    </ul>
-                </div>
-            </div>
-            <div class="navbar-elements flex-row">
-                <div class="arrow nav-el-btn"><i class="fa-solid fa-angle-left"></i></div>
-                <button title="navbar-lock" class="lock nav-el-btn"><i class="fa-solid fa-lock-open""></i></button>
-            </div>
+    <div class="content-container">
+        <nav id="content-navbar" class="content-navbar-container">
         </nav>
-        <div class=" post-container flex-row">
-                        <div class="post flex-column flex-none">
-                            <h1>Post Title</h1>
-                            <button class="close-post"><i class="fa-solid fa-angle-right"></i></button>
-                            <div class="post-text-area1 flex-column">
-                                <textarea class="title-text-area text-area" placeholder="Post title"></textarea>
-                            </div>
-                            <div class="post-text-area2 flex-column">
-                                <h1>Post Description</h1>
-                                <textarea maxlength="250" class="descr-text-area text-area"
-                                    placeholder="Post description"></textarea>
-                                <div class="sum">Total: out of:</div>
-                            </div>
-                            <div class="post-notice-varning flex-row flex-none">
-                                <div>The post description/tittle is not empty. Do you want to continue?</div>
-                                <button class="post-notice-btn ok">ok</button>
-                                <button class="post-notice-btn back">back to post</button>
-                            </div>
-                            <div class="post-btns">
-                                <div class="tag-used">Added tags:</div>
-                                <ul class="tag-list flex-row">
-                                    <button class="tag">#rep</button>
-                                    <button class="tag">#lol</button>
-                                    <button class="tag">#kekw</button>
-                                    <button class="tag">#=/</button>
-                                </ul>
-                                <button class="cancel">Cancel</button>
-                                <button class="send">Send</button>
-                            </div>
-
-                        </div>
-            </div>
-
-            <div class="posted-posts-container flex-colymn">
-                <button class="create-post">Create Post:</button>
-
-                <div class="posts flex-column">
-                    <div class="posted-post flex-column">
-                        <h1 class="post-tittle">Termal vision</h1>
-                        <div class="post-descr">TEXTEXTEXTEXTEXTEXTEXTEXTEXTEX</div>
-                    </div>
-                    <div class="posted-post flex-column">
-                        <h1 class="post-tittle">Termal vision</h1>
-                        <div class="post-descr">TEXTEXTEXTEXTEXTEXTEXTEXTEXTEX</div>
-                    </div>
-                    <div class="posted-post flex-column">
-                        <h1 class="post-tittle">Termal vision</h1>
-                        <div class="post-descr">TEXTEXTEXTEXTEXTEXTEXTEXTEXTEX</div>
-                    </div>
-                    <div class="posted-post flex-column">
-                        <h1 class="post-tittle">Termal vision</h1>
-                        <div class="post-descr">TEXTEXTEXTEXTEXTEXTEXTEXTEXTEX</div>
-                    </div>
-                </div>
-            </div>
+        <div class="content">    
+        </div>
     </div>
 </body>
 

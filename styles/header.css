@@ -1,0 +1,30 @@
+@import url(./general.css);
+
+.header-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 10px;
+
+    height: var(--header-cont-heigth);
+    border: 1px solid red;
+}
+
+.header-buttons .header-btn{
+    height: var(--header-btn-height);
+    width: var(--header-btn-width);
+    border: 1px solid red;
+    border-radius: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-buttons{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}

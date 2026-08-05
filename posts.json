@@ -1,0 +1,98 @@
+[
+  {
+    "postID": 1,
+    "authorName": "Artem Dev",
+    "title": "Understanding asynchronous programming in JavaScript",
+    "description": "Asynchronous programming allows JavaScript to perform tasks such as API requests, timers, and file operations without blocking the main thread. The event loop coordinates callbacks, promises, and async functions so applications remain responsive. Promises represent future values and async/await makes asynchronous code easier to read.",
+    "tags": ["javascript", "async", "await", "promises"],
+    "likes": 184
+  },
+  {
+    "postID": 2,
+    "authorName": "Mia Johnson",
+    "title": "How the JavaScript event loop really works",
+    "description": "The event loop coordinates synchronous code with asynchronous operations. Understanding microtasks, macrotasks, and execution order helps explain why promises resolve before timers and why certain code runs earlier than expected.",
+    "tags": ["javascript", "event-loop", "web-apis"],
+    "likes": 241
+  },
+  {
+    "postID": 3,
+    "authorName": "Lucas Martin",
+    "title": "Why CSS Grid changed web layout design",
+    "description": "CSS Grid provides a two-dimensional layout system that makes complex page structures much easier to build. It reduces the need for hacks previously required with floats and positioning and works especially well for responsive interfaces.",
+    "tags": ["css", "grid", "responsive"],
+    "likes": 132
+  },
+  {
+    "postID": 4,
+    "authorName": "Sophia Lee",
+    "title": "Building reusable React components",
+    "description": "Reusable components improve maintainability and reduce duplicated code. By designing components with clear props and predictable behavior, large applications become easier to extend and test over time.",
+    "tags": ["react", "components", "frontend"],
+    "likes": 276
+  },
+  {
+    "postID": 5,
+    "authorName": "Daniel Kim",
+    "title": "A practical guide to localStorage",
+    "description": "localStorage allows web applications to persist data directly in the browser. It is useful for themes, settings, drafts, and cached content, but developers should remember that it stores only strings and has size limitations.",
+    "tags": ["javascript", "localStorage", "browser"],
+    "likes": 198
+  },
+  {
+    "postID": 6,
+    "authorName": "Emma Brown",
+    "title": "Flexbox alignment explained simply",
+    "description": "Flexbox is ideal for one-dimensional layouts. Understanding justify-content, align-items, and flex-grow makes it much easier to create responsive navigation bars, cards, and centered layouts.",
+    "tags": ["css", "flexbox", "layout"],
+    "likes": 165
+  },
+  {
+    "postID": 7,
+    "authorName": "Noah Wilson",
+    "title": "Getting started with TypeScript",
+    "description": "TypeScript adds static typing to JavaScript, improving tooling, autocompletion, and error detection. It helps catch many mistakes during development before code reaches production.",
+    "tags": ["typescript", "javascript", "types"],
+    "likes": 223
+  },
+  {
+    "postID": 8,
+    "authorName": "Olivia Davis",
+    "title": "Understanding fetch and JSON responses",
+    "description": "The Fetch API provides a modern way to make HTTP requests. Parsing JSON with response.json() returns a promise, which is why fetch operations are naturally asynchronous and often used with async/await.",
+    "tags": ["fetch", "json", "api"],
+    "likes": 209
+  },
+  {
+    "postID": 9,
+    "authorName": "Ethan Clark",
+    "title": "Organizing JavaScript projects with modules",
+    "description": "ES modules allow developers to split applications into smaller files with import and export statements. This improves code organization, reuse, and maintainability as projects grow.",
+    "tags": ["javascript", "modules", "import", "export"],
+    "likes": 191
+  },
+  {
+    "postID": 10,
+    "authorName": "Ava Thompson",
+    "title": "Responsive design without frameworks",
+    "description": "Responsive websites can be built using media queries, flexible layouts, relative units, and modern CSS features. Understanding these fundamentals reduces dependency on large CSS frameworks.",
+    "tags": ["css", "responsive", "media-queries"],
+    "likes": 154
+  },
+  {
+    "postID": 11,
+    "authorName": "Liam Anderson",
+    "title": "DOM manipulation best practices",
+    "description": "Efficient DOM manipulation reduces unnecessary reflows and repaints. Creating elements with JavaScript, using document fragments, and minimizing repeated queries can significantly improve performance.",
+    "tags": ["javascript", "dom", "performance"],
+    "likes": 178
+  },
+  {
+    "postID": 12,
+    "authorName": "Grace Miller",
+    "title": "Node.js basics for frontend developers",
+    "description": "Node.js allows JavaScript to run outside the browser and is commonly used for servers, tooling, and build systems. Understanding npm, modules, and basic server concepts helps frontend developers work across the full web stack.",
+    "tags": ["nodejs", "npm", "javascript"],
+    "likes": 267
+  }
+]

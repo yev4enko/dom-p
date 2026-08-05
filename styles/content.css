@@ -1,0 +1,37 @@
+@import url(./general.css);
+
+.content-container{
+    display: flex;
+    flex-direction: row;
+    border: 1px solid red;
+}
+
+.content-container .content{
+    flex:1;
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+}
+
+.content .post{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    overflow:hidden;
+
+    border: 1px solid red;
+    border-radius: 10px;
+    width: 800px;
+    height: 200px;
+    padding: 10px;
+}
+.content .post.extended{
+    height: fit-content;
+}
+
+.content .content-btn{
+    height: var(--content-btn-expand-heigth);
+    width: var(--content-btn-expand-width);
+}
