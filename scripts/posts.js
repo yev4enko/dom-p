@@ -1,7 +1,7 @@
 import { printModal } from "./modal.js";
 
 export function getData() {
-    return fetch("../posts.json")
+    return fetch('./posts.json')
         .then((responce) => { return responce.json() })
 }
 
