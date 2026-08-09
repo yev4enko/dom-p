@@ -1,6 +1,6 @@
-let modal = `<div class = "modal">MODALdsfgdsgfdsfgdsfgdfsg</div>`
 
-export function printModal() {
+export function printModal(text) {
+    let modal = `<div class = "modal">${text}</div>`
     const body = document.querySelector("body");
     const fstChild = document.createElement("div")
     body.prepend(fstChild)

@@ -2,6 +2,12 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+html{
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
 }
 
 :root{
@@ -10,5 +16,31 @@
     --content-btn-expand-width: 60px;
     --content-btn-expand-heigth: 30px;
 
+    --text-color: #ffffff;
+
+    --back-color: #0D1117;
+    --border-color: #303030;
+    --hover-color: #161B22;
+
+    --button-color: #21262D;
+    --button-hover-color:#30363D;
+    --button-active-color:#1F6FEB;
+
+    --font-color-prime:#E6EDF3;
+    --font-color-second:#9DA7B3;
+
+    --icon-color:#9DA7B3;
+    --icon-hover-color:#E6EDF3;
+    --icon-active-color:#58A6FF;
+
+    --nav-btn-heigth: 50px;
+    --nav-btn-width: 50px;
+    
     --header-cont-heigth: 80px;
+
+    --navbar-open: 200px;
+}
+
+a{
+    text-decoration: none;
 }

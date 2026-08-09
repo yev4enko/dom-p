@@ -1,15 +1,66 @@
 @import url(./general.css);
 
 .content-navbar-container{
-    width: 20px;
-    height: 100vh;
-    padding: 10px;
-    border: 1px solid red;
+    position: fixed;
+    padding: 5px;
+    width: 65px;
+    height: 100vw;
     transition: width 0.3s ease;
+    overflow: hidden;
+
+    background-color: var(--back-color);
+    border-top: 1px solid var(--border-color);
+    border-right: 2px solid var(--border-color);
 }
 
-.content-navbar-container.open {
-    width: 300px;
+
+.content-navbar-container:hover {
+    width: var(--navbar-open);
     height: 100vh;
-    border: 1px solid red;
+}
+
+.content-navbar-container .logo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.content-navbar-container .buttons-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.buttons-list .button-nav{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; 
+    padding: 15px;
+    height: var(--nav-btn-heigth);
+    width: var(--nav-btn-width);
+    
+    border-radius: 20px;
+    outline: none;
+
+    background-color: white;
+    border: 0px;
+    transition: background-color 0.3s ease, transform 0.3s ease, width 0.3s ease;
+}
+
+.content-navbar-container:hover .buttons-list .button-nav{
+    width: calc(var(--navbar-open) - 20px);
+}
+
+.button-nav i{
+    width: 20px;
+}
+
+.button-nav:hover {
+
+    background-color: rgb(218, 217, 217);
+}
+.button-nav:active {
+    transform: scale(0.95);
+    background-color: rgb(177, 177, 177);
 }
