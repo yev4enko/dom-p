@@ -48,7 +48,7 @@
     transition: background-color 0.3s ease, transform 0.3s ease, width 0.3s ease;
 }
 
-.content-navbar-container:hover .buttons-list .button-nav{
+.content-navbar-container:hover .buttons-list .button-nav:hover{
     width: calc(var(--navbar-open) - 20px);
 }
 

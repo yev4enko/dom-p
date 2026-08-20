@@ -1,92 +1,362 @@
 [
   {
-    "postID": 1,
-    "savedPost": false,
-    "authorName": "Artem Dev",
-    "title": "Understanding JavaScript async programming",
-    "description": "Learn promises, async functions.",
-    "tags": ["javascript", "async", "await", "promises"],
-    "likes": 184 
+    "authorName": "JavaScript Lab",
+    "postTittle": "Understanding the Event Loop and Concurrency Model",
+    "postDescr": [
+      "JavaScript is single-threaded, yet it handles asynchronous operations seamlessly thanks to the event loop. This mechanism allows non-blocking I/O by offloading tasks like timers, network requests, and callbacks to the Web APIs or C++ APIs.",
+      "The event loop continuously checks the call stack and the task queues. When the stack is empty, it takes the first task from the microtask queue (promises, MutationObserver) or the macrotask queue (setTimeout, setInterval, I/O) and pushes it onto the stack.",
+      "Microtasks always have higher priority than macrotasks, meaning promise callbacks execute before any timer callbacks in the same tick. This can lead to unexpected ordering if you're not aware of the distinction.",
+      "A common pitfall is blocking the event loop with synchronous heavy computations, which freezes the UI or delays other operations. Offloading such work to Web Workers or breaking it into smaller chunks with requestIdleCallback helps maintain responsiveness.",
+      "Mastering the event loop is crucial for debugging performance issues, understanding async behavior, and writing efficient JavaScript that feels snappy and responsive."
+    ],
+    "postTags": [
+      "#javascript",
+      "#eventloop",
+      "#async",
+      "#concurrency"
+    ],
+    "postLikes": 245
   },
   {
-    "postID": 2,
-    "savedPost": false,
-    "authorName": "Sarah Code",
-    "title": "CSS Flexbox layout basics",
-    "description": "Build responsive layouts with flexible containers.",
-    "tags": ["css", "flexbox", "layout"],
-    "likes": 96
+    "authorName": "JavaScript Lab",
+    "postTittle": "Functional Programming Concepts in JavaScript",
+    "postDescr": [
+      "Functional programming (FP) is a paradigm that treats computation as the evaluation of mathematical functions, avoiding mutable state and side effects. JavaScript, with its first-class functions, is well-suited for FP patterns.",
+      "Key concepts include pure functions, which always produce the same output for the same input and have no side effects. They make code more predictable, testable, and easier to reason about.",
+      "Higher-order functions like map, filter, and reduce are staples of FP in JavaScript. They enable declarative data transformations over imperative loops, leading to cleaner and more concise code.",
+      "Immutability is another pillar. Instead of modifying existing data, FP encourages creating new copies with the desired changes. Libraries like Immutable.js or native methods like spread and Object.assign support this approach.",
+      "While FP may have a learning curve, incorporating even a few of its principles can dramatically improve code quality, especially in complex applications where state management becomes challenging."
+    ],
+    "postTags": [
+      "#javascript",
+      "#functionalprogramming",
+      "#immutability",
+      "#higherorderfunctions"
+    ],
+    "postLikes": 198
   },
   {
-    "postID": 3,
-    "savedPost": false,
-    "authorName": "Mike JS",
-    "title": "DOM manipulation essentials",
-    "description": "Select, create, and update HTML elements.",
-    "tags": ["javascript", "dom"],
-    "likes": 121
+    "authorName": "JavaScript Lab",
+    "postTittle": "Debouncing and Throttling: Optimizing High-Frequency Events",
+    "postDescr": [
+      "High-frequency events like scrolling, resizing, typing, or mousemove can trigger dozens of callbacks per second, potentially harming performance. Debouncing and throttling are two techniques to control how often a function executes.",
+      "Debouncing ensures that a function fires only after a specified pause in activity. This is perfect for search input suggestions — you wait until the user stops typing before making an API call.",
+      "Throttling, in contrast, guarantees that a function runs at most once in a given time interval. This is ideal for scroll listeners that update sticky navigation, ensuring updates happen regularly without overwhelming the browser.",
+      "Modern libraries like Lodash provide ready-to-use debounce and throttle functions, but implementing them manually is straightforward with setTimeout and timestamp comparisons.",
+      "Choosing between debounce and throttle depends on the use case. Understanding both patterns helps you write efficient, responsive applications that handle user interactions gracefully."
+    ],
+    "postTags": [
+      "#javascript",
+      "#performance",
+      "#debouncing",
+      "#throttling"
+    ],
+    "postLikes": 223
   },
   {
-    "postID": 4,
-    "savedPost": false,
-    "authorName": "Lena Web",
-    "title": "Responsive design techniques",
-    "description": "Create websites that adapt to screens.",
-    "tags": ["css", "responsive"],
-    "likes": 88
+    "authorName": "JavaScript Lab",
+    "postTittle": "Prototypal Inheritance and the Prototype Chain",
+    "postDescr": [
+      "Unlike classical inheritance, JavaScript uses prototypal inheritance, where objects inherit directly from other objects. Every object has an internal [[Prototype]] link, accessible via __proto__ or Object.getPrototypeOf().",
+      "When you access a property on an object, JavaScript traverses the prototype chain until it finds the property or reaches null. This chain is what powers method sharing across instances created with constructor functions or classes.",
+      "The class syntax introduced in ES6 is syntactic sugar over the existing prototype system. It provides a clearer, more familiar way to define constructors and methods, but the underlying behavior remains prototype-based.",
+      "Understanding prototypes is essential for debugging inheritance issues, extending built-in objects, or implementing mixins. It also helps you grasp how frameworks like React or Angular handle component hierarchies.",
+      "Properly leveraging prototypal inheritance allows you to write memory-efficient code by sharing methods across instances rather than duplicating them."
+    ],
+    "postTags": [
+      "#javascript",
+      "#prototypes",
+      "#inheritance",
+      "#oop"
+    ],
+    "postLikes": 167
   },
   {
-    "postID": 5,
-    "savedPost": false,
-    "authorName": "Tom Frontend",
-    "title": "Fetch API quick guide",
-    "description": "Request and display remote JSON data.",
-    "tags": ["javascript", "fetch", "api"],
-    "likes": 143
+    "authorName": "JavaScript Lab",
+    "postTittle": "Handling Forms and Validation Like a Pro",
+    "postDescr": [
+      "Forms are the backbone of user input in web applications. Handling them effectively involves not just capturing data but also providing real-time validation, accessible error messages, and a smooth user experience.",
+      "Modern JavaScript allows you to validate on the client side using the Constraint Validation API, which includes properties like validity, validationMessage, and methods like checkValidity() and reportValidity().",
+      "For complex validation logic, custom functions are often necessary. Combining them with debounced input events ensures that validation runs efficiently without blocking the user.",
+      "Accessibility is crucial — always pair inputs with labels, associate error messages using aria-describedby, and announce validation errors to screen readers with live regions.",
+      "Finally, never rely solely on client-side validation. Always validate on the server side as well, as client-side checks are easily bypassed and are only for user convenience."
+    ],
+    "postTags": [
+      "#javascript",
+      "#forms",
+      "#validation",
+      "#accessibility"
+    ],
+    "postLikes": 189
   },
   {
-    "postID": 6,
-    "savedPost": false,
-    "authorName": "Nina UI",
-    "title": "CSS transitions explained",
-    "description": "Animate properties smoothly with transitions.",
-    "tags": ["css", "animation"],
-    "likes": 77
+    "authorName": "JavaScript Lab",
+    "postTittle": "Working with Dates and Times: Best Practices",
+    "postDescr": [
+      "Dates and times are notoriously tricky in JavaScript due to time zones, daylight saving time, and formatting inconsistencies. The native Date object has many pitfalls, such as mutability and month numbering starting from zero.",
+      "For simple operations, you can use Date methods like getFullYear(), getMonth(), and toLocaleString(). However, for serious date manipulation, consider using libraries like date-fns or Day.js, which offer functional, immutable utilities.",
+      "Always store dates in UTC on the server and convert to local time on the client. This prevents discrepancies and simplifies timezone handling across different regions.",
+      "When comparing dates, remember that Date objects are compared by reference. Use getTime() or the numeric value to compare timestamps reliably.",
+      "For scheduling or intervals, prefer timestamps (milliseconds since Unix epoch) for calculations, as they are timezone-agnostic and easy to compare and store."
+    ],
+    "postTags": [
+      "#javascript",
+      "#dates",
+      "#timezone",
+      "#datetime"
+    ],
+    "postLikes": 143
   },
   {
-    "postID": 7,
-    "savedPost": false,
-    "authorName": "Alex Dev",
-    "title": "JavaScript array methods",
-    "description": "Use map, filter, and reduce effectively.",
-    "tags": ["javascript", "arrays"],
-    "likes": 165
+    "authorName": "JavaScript Lab",
+    "postTittle": "Local Storage, Session Storage, and Cookies: When to Use Which",
+    "postDescr": [
+      "Client-side storage options are plentiful, but each serves a different purpose. localStorage provides persistent storage with no expiration, ideal for user preferences, themes, or caching static data.",
+      "sessionStorage is similar but lasts only for the duration of the page session. It's perfect for sensitive data that should disappear when the user closes the tab, like form drafts or temporary states.",
+      "Cookies have a smaller storage limit (about 4KB) and are sent with every HTTP request, making them suitable for authentication tokens, session IDs, and server-side reads. They can be made HttpOnly and Secure for safety.",
+      "None of these are suitable for large data or sensitive information without encryption. For larger datasets, consider IndexedDB, which is a full NoSQL database inside the browser.",
+      "Always clear storage on logout, avoid storing personally identifiable information (PII) unless necessary, and be mindful of storage limits and cross-origin restrictions."
+    ],
+    "postTags": [
+      "#javascript",
+      "#storage",
+      "#localstorage",
+      "#cookies"
+    ],
+    "postLikes": 211
   },
   {
-    "postID": 8,
-    "savedPost": false,
-    "authorName": "Emma Stack",
-    "title": "Local storage basics",
-    "description": "Store browser data between page reloads.",
-    "tags": ["javascript", "localStorage"],
-    "likes": 109
+    "authorName": "JavaScript Lab",
+    "postTittle": "Mastering Array Methods: Map, Filter, Reduce, and Beyond",
+    "postDescr": [
+      "Arrays are the workhorses of data manipulation in JavaScript, and mastering their built-in methods is essential for writing expressive and efficient code. map, filter, and reduce form the holy trinity of functional transformation.",
+      "map creates a new array by applying a function to every element. It's perfect for transforming data shapes, like converting an array of strings to lengths.",
+      "filter returns a new array containing only elements that pass a test. Use it for searching, excluding unwanted items, or implementing search filters.",
+      "reduce is the most powerful — it reduces an array to a single value, whether that's a sum, an object, or even another array. It's incredibly versatile for aggregating data.",
+      "Other useful methods include some, every, find, findIndex, and flatMap. Combining these with chaining allows you to compose complex data pipelines that are both readable and performant."
+    ],
+    "postTags": [
+      "#javascript",
+      "#arrays",
+      "#functional",
+      "#datamanipulation"
+    ],
+    "postLikes": 256
   },
   {
-    "postID": 9,
-    "savedPost": false,
-    "authorName": "Chris Web",
-    "title": "Semantic HTML fundamentals",
-    "description": "Improve accessibility using meaningful elements.",
-    "tags": ["html", "semantic"],
-    "likes": 91
+    "authorName": "JavaScript Lab",
+    "postTittle": "Error Handling Beyond Try/Catch: Best Practices",
+    "postDescr": [
+      "While try...catch is the go-to for synchronous errors, robust applications need more sophisticated error handling strategies, especially for asynchronous operations and network requests.",
+      "Always use .catch() on promises or try...catch inside async functions. But also consider global handlers like window.onerror or unhandledrejection for catching unexpected errors that slip through.",
+      "Implement error boundaries in frameworks like React to prevent entire UI trees from unmounting due to a single component error.",
+      "Log errors to a backend service with enough context (user action, state, timestamp) for debugging in production. Tools like Sentry or LogRocket provide excellent integration.",
+      "Never expose raw error messages to users — they might leak sensitive information. Instead, show user-friendly messages and log the full error internally."
+    ],
+    "postTags": [
+      "#javascript",
+      "#errorhandling",
+      "#debugging",
+      "#logging"
+    ],
+    "postLikes": 178
   },
   {
-    "postID": 10,
-    "savedPost": false,
-    "authorName": "Olivia Code",
-    "title": "Debugging JavaScript efficiently",
-    "description": "Find bugs faster using browser tools.",
-    "tags": ["javascript", "debugging"],
-    "likes": 137
+    "authorName": "JavaScript Lab",
+    "postTittle": "CSS-in-JS vs. CSS Modules vs. Traditional Stylesheets",
+    "postDescr": [
+      "Styling in modern JavaScript applications has evolved beyond plain CSS. CSS-in-JS libraries like styled-components and Emotion allow you to co-locate styles with components, offering scoped styling and dynamic theming.",
+      "CSS Modules provide local scoping by default, turning class names into unique identifiers. They work well with build tools and offer a middle ground between global CSS and full CSS-in-JS.",
+      "Traditional stylesheets (or Sass/Less) are still valid and performant, especially for global styles, reset styles, or projects with straightforward styling needs.",
+      "The choice depends on your team's preferences, project size, and performance requirements. CSS-in-JS can introduce runtime overhead, while CSS Modules are purely compile-time.",
+      "Regardless of the approach, maintain a consistent naming convention (like BEM) and keep styles modular to avoid cascading conflicts."
+    ],
+    "postTags": [
+      "#javascript",
+      "#css",
+      "#styling",
+      "#cssinjs"
+    ],
+    "postLikes": 194
+  },
+  {
+    "authorName": "JavaScript Lab",
+    "postTittle": "Service Workers and Progressive Web Apps (PWAs)",
+    "postDescr": [
+      "Service workers are the backbone of Progressive Web Apps, enabling offline capabilities, background sync, and push notifications. They act as a proxy between your app and the network, intercepting fetch requests.",
+      "To register a service worker, you first register it in your main JavaScript file. The worker then installs and activates, caching static assets during installation for offline use.",
+      "A well-designed caching strategy is key. You can cache assets on install, serve from cache first, or use network-first approaches depending on the asset type and update frequency.",
+      "Service workers only work over HTTPS or localhost, ensuring security. They also run in a separate thread, so they cannot directly access the DOM, but they communicate via postMessage.",
+      "Embracing PWAs improves user engagement, reduces bounce rates, and offers an app-like experience without the app store, making them a strategic advantage for many businesses."
+    ],
+    "postTags": [
+      "#javascript",
+      "#serviceworkers",
+      "#pwa",
+      "#offline"
+    ],
+    "postLikes": 232
+  },
+  {
+    "authorName": "JavaScript Lab",
+    "postTittle": "Memory Management and Garbage Collection",
+    "postDescr": [
+      "JavaScript automatically manages memory through garbage collection, but developers still need to be mindful of memory leaks. Common leaks include global variables, forgotten timers, and detached DOM nodes.",
+      "The primary garbage collection algorithm is mark-and-sweep. It marks all reachable objects from a root (global scope) and sweeps away unmarked objects, freeing their memory.",
+      "To avoid leaks, always clean up event listeners with removeEventListener when components unmount, clear intervals with clearInterval, and nullify references to large objects when no longer needed.",
+      "Using WeakMap and WeakSet can help with caching because they hold weak references, allowing garbage collection when the key object is no longer referenced elsewhere.",
+      "Profiling with Chrome DevTools' Memory panel helps identify and fix memory leaks. Look for detached DOM nodes and keep an eye on the heap size over time."
+    ],
+    "postTags": [
+      "#javascript",
+      "#memorymanagement",
+      "#performance",
+      "#garbagecollection"
+    ],
+    "postLikes": 155
+  },
+  {
+    "authorName": "JavaScript Lab",
+    "postTittle": "Currying and Partial Application in JavaScript",
+    "postDescr": [
+      "Currying is a technique where a function that takes multiple arguments is transformed into a sequence of functions, each taking a single argument. It allows you to fix some arguments and produce a new function.",
+      "Partial application is similar but not identical — it fixes a subset of arguments upfront and returns a function that expects the remaining ones. This is useful for creating specialized versions of generic functions.",
+      "Both patterns enhance reusability and composition. For instance, a curried add function (add(2)(3)) can be partially applied to create addTwo, which adds 2 to any number.",
+      "Libraries like Lodash provide _.curry, and modern JavaScript can implement currying manually using closures and the rest operator. These techniques are especially useful in functional pipelines.",
+      "While currying may seem academic, it's widely used in real-world libraries like Ramda and in frameworks that rely on function composition, making it a valuable tool in your toolkit."
+    ],
+    "postTags": [
+      "#javascript",
+      "#currying",
+      "#functionalprogramming",
+      "#composition"
+    ],
+    "postLikes": 142
+  },
+  {
+    "authorName": "JavaScript Lab",
+    "postTittle": "Optimizing Bundle Size with Code Splitting and Tree Shaking",
+    "postDescr": [
+      "Modern JavaScript applications often ship large bundles, impacting load times and user experience. Code splitting and tree shaking are two essential techniques to reduce bundle size.",
+      "Code splitting allows you to break your bundle into smaller chunks that are loaded on demand. Using dynamic import() or framework-based lazy loading, you can load routes or components only when needed.",
+      "Tree shaking is a dead-code elimination technique that removes unused exports from your bundle. It works best with ES modules, which are statically analyzable. Tools like Webpack and Rollup support it out of the box.",
+      "To maximize tree shaking, avoid side-effectful imports, use named exports over default exports, and configure your bundler to treat your code as side-effect-free (sideEffects: false in package.json).",
+      "Combining these techniques can significantly reduce initial load times, improve Lighthouse scores, and make your app feel faster and more responsive to users."
+    ],
+    "postTags": [
+      "#javascript",
+      "#bundling",
+      "#treeshaking",
+      "#performance"
+    ],
+    "postLikes": 268
+  },
+  {
+    "authorName": "JavaScript Lab",
+    "postTittle": "Understanding 'this' Keyword: Contexts and Binding",
+    "postDescr": [
+      "The this keyword is one of JavaScript's most confusing concepts because its value depends on how a function is called, not where it's defined. It can refer to the global object, the calling object, or a bound value.",
+      "In a regular function call (non-strict mode), this refers to the global object (window in browsers). In strict mode, it becomes undefined. This is why many developers prefer arrow functions, which lexically bind this from the enclosing scope.",
+      "Methods inside objects refer to the object itself. However, if you pass a method as a callback, you lose the context unless you explicitly bind it using .bind(), .call(), or .apply().",
+      "The bind method creates a new function with this permanently set to the provided value. call and apply invoke the function immediately with a given this and arguments.",
+      "Understanding this is critical for frameworks like React (where class methods need binding) and for debugging event handlers, promises, and callbacks."
+    ],
+    "postTags": [
+      "#javascript",
+      "#this",
+      "#context",
+      "#binding"
+    ],
+    "postLikes": 203
+  },
+  {
+    "authorName": "JavaScript Lab",
+    "postTittle": "Generators and Iterators: Lazy Evaluation in JavaScript",
+    "postDescr": [
+      "Generators are functions that can pause execution and resume later, yielding multiple values over time. They are defined with function* syntax and use the yield keyword to produce values.",
+      "Iterators are objects that define a next() method, returning { value, done }. Generators implement the iterator protocol automatically, making them perfect for creating custom iterables.",
+      "Generators enable lazy evaluation, meaning values are computed only when requested. This is memory-efficient for large datasets, infinite sequences, or streams of data.",
+      "They also facilitate cooperative multitasking — you can yield control back to the caller, allowing other code to run in between. This is useful for handling complex flows without blocking the event loop.",
+      "While not used daily, generators are powerful for state machines, async/await polyfills, and libraries like Redux-Saga that manage side effects."
+    ],
+    "postTags": [
+      "#javascript",
+      "#generators",
+      "#iterators",
+      "#lazy"
+    ],
+    "postLikes": 131
+  },
+  {
+    "authorName": "JavaScript Lab",
+    "postTittle": "Cross-Origin Resource Sharing (CORS) and How to Handle It",
+    "postDescr": [
+      "CORS is a security mechanism implemented by browsers that restricts web pages from making requests to a different domain than the one that served the page. It's designed to prevent malicious scripts from accessing sensitive data.",
+      "When a cross-origin request is made, the browser sends an OPTIONS preflight request to the server to check if the actual request is allowed. The server must respond with appropriate CORS headers.",
+      "Key headers include Access-Control-Allow-Origin (which domains are allowed), Access-Control-Allow-Methods (which HTTP methods), and Access-Control-Allow-Headers (which custom headers are permitted).",
+      "For development, you can use proxies (like CORS-anywhere) or browser extensions to bypass CORS temporarily, but production deployments require proper server configuration.",
+      "If you control the server, configure CORS properly — allowing all origins (*) is risky for production. For third-party APIs, check their documentation for supported CORS policies."
+    ],
+    "postTags": [
+      "#javascript",
+      "#cors",
+      "#security",
+      "#network"
+    ],
+    "postLikes": 187
+  },
+  {
+    "authorName": "JavaScript Lab",
+    "postTittle": "WebSockets: Real-Time Communication in JavaScript",
+    "postDescr": [
+      "WebSockets provide full-duplex, persistent communication channels between a client and a server, enabling real-time features like chat, live updates, gaming, and collaborative editing.",
+      "Unlike HTTP requests, which are stateless and client-initiated, WebSockets maintain an open connection, allowing both parties to send messages at any time with minimal overhead.",
+      "Establishing a WebSocket connection is simple: new WebSocket('ws://example.com'). Then you handle events like onopen, onmessage, onerror, and onclose.",
+      "For production, consider using libraries like Socket.IO, which provide fallbacks (e.g., polling) for older browsers and additional features like rooms, reconnection, and acknowledgments.",
+      "WebSockets are powerful but require careful handling of reconnection logic, heartbeat pings to detect broken connections, and security measures like message validation and authentication."
+    ],
+    "postTags": [
+      "#javascript",
+      "#websockets",
+      "#realtime",
+      "#networking"
+    ],
+    "postLikes": 214
+  },
+  {
+    "authorName": "JavaScript Lab",
+    "postTittle": "Internationalization (i18n) and Localization (l10n)",
+    "postDescr": [
+      "Internationalization (i18n) is the process of designing your application to support multiple languages and regions. Localization (l10n) is the actual adaptation of content for a specific locale.",
+      "JavaScript provides the Intl object, which offers robust built-in support for formatting dates, numbers, currencies, and relative times according to a user's locale. This reduces the need for external libraries.",
+      "For string translations, use a message catalog (like JSON files) and a key-based lookup. Libraries like i18next and react-i18next provide comprehensive solutions with interpolation, plurals, and nesting.",
+      "Always use locale-aware collation for sorting strings: 'es' vs 'de' have different sort orders. Use Intl.Collator for that purpose.",
+      "Testing i18n early is vital — design your UI to accommodate varying text lengths (e.g., German words are longer than English) and right-to-left (RTL) languages like Arabic."
+    ],
+    "postTags": [
+      "#javascript",
+      "#i18n",
+      "#localization",
+      "#intl"
+    ],
+    "postLikes": 159
+  },
+  {
+    "authorName": "JavaScript Lab",
+    "postTittle": "Understanding JavaScript Engines: V8, SpiderMonkey, and JavaScriptCore",
+    "postDescr": [
+      "JavaScript engines are the runtime environments that execute JavaScript code. The most prominent are V8 (Chrome, Node.js), SpiderMonkey (Firefox), and JavaScriptCore (Safari). Each has unique optimizations and features.",
+      "V8 uses Just-In-Time (JIT) compilation, which compiles JavaScript to machine code at runtime. It also employs optimizations like inline caching and hidden classes to speed up property access.",
+      "Engines also handle garbage collection, memory management, and the event loop. Understanding their architecture helps you write more performant code by avoiding deoptimizations.",
+      "For example, staying consistent in object shape (adding properties in the same order) helps V8 optimize access. Similarly, using arrays with uniform types improves performance.",
+      "While you don't need to be an engine expert, knowing these fundamentals can guide your coding practices toward better performance and fewer surprises across different browsers."
+    ],
+    "postTags": [
+      "#javascript",
+      "#engines",
+      "#v8",
+      "#performance"
+    ],
+    "postLikes": 146
   }
 ]

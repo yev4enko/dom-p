@@ -2,5 +2,6 @@
 @import url(./styles/general.css);
 @import url(./styles/posts.css);
 @import url(./styles/modal.css);
-@import url(./styles/content.css);
 @import url(./styles/contentnav.css);
+@import url(./styles/post.css);
+@import url(./styles/create.css);

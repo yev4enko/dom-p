@@ -1,0 +1,70 @@
+@import url(./general.css);
+
+.create-container{
+    color: white;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap:20px;
+}
+
+
+.create-text-container{
+    border-radius: 10px;
+    border:1px solid white;
+    width: 1250px;
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+}
+
+.descr-container,
+.preview-container{
+    width: var(--post-width);
+}
+
+.create-text-container,
+.create-nav-container{
+    padding: 10px 0px 10px;
+    font-size: 20px;
+}
+
+.create-nav-container{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.descr-container .descr{
+    width: var(--post-width);
+    resize: none;
+    height: 300px;
+}
+
+.name-tittle-tags-container{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}
+
+.name-tittle-tags-container .input{
+    width: 400px;
+    height: 50px;
+    border-radius: 10px;
+    padding: 0px 5px 0px;
+}
+
+.nav-container{
+    margin-top: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.nav-container button{
+    border-radius: 10px;
+    width: 160px;
+    height: 80px;
+}

@@ -1,28 +1,41 @@
-import { getData, printPost, eventHandler, eventHandlerSearch } from "./scripts/posts.js";
-import { printModal } from "./scripts/modal.js";
+import { getData, renderPosts, eventHandler } from "./scripts/posts.js";
 import { reverse } from "./scripts/math.js";
+import { userPost } from "./scripts/userPost.js";
 
 const contentNavbarContainer = document.getElementById("content-navbar");
 
 getData()
-    .then((posts) => posts = reverse(posts))
+    .then((posts) => reverse(posts))
     .then((posts) => {
-        if (localStorage.length === 0) {
-            posts.forEach(post => {
-                localStorage.setItem(`postID${post.postID}`, JSON.stringify(post))
-            })
+        if (localStorage.length !== 0) {
+            return;
         }
-        return posts;
-    })
-    .then((posts) => {
-        if (localStorage !== 0) {
-            posts.forEach((post) => {
-                const postss = JSON.parse(localStorage.getItem(`postID${post.postID}`))
-                printPost(postss)
-            })
-        }
+        const newPosts = posts.map((post) =>
+            new userPost(
+                post.authorName,
+                post.postTittle,
+                post.postDescr,
+                post.postTags,
+                post.postLikes
+            )
+        );
+        newPosts.forEach((post) => {
+            localStorage.setItem(
+                post.postID,
+                JSON.stringify(post)
+            );
+        });
     })
     .then(() => {
-        eventHandler();
-        eventHandlerSearch();
+        if (localStorage.length !== 0) {
+            const posts = Object.keys(localStorage)
+                .map(key => JSON.parse(localStorage.getItem(key))) 
+                .filter(post => post && post.createDate) 
+                .sort((a, b) => b.createDate - a.createDate); 
+
+            posts.forEach(post => renderPosts(post)); 
+        }
     })
+    .then(() => eventHandler())
+
+

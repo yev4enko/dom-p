@@ -39,6 +39,23 @@ html{
     --header-cont-heigth: 80px;
 
     --navbar-open: 200px;
+
+    --modal-width: 400px;
+    --modal-heigth: 200px;
+
+    --modal-big-w: 1200px;
+    --modal-big-h: 800px;
+
+
+
+    --post-width: 1200px;
+
+    --preview-post-width:600px;
+    
+
+    --create-textarea-w: 1000px;
+    --create-textarea-h: 400px;
+
 }
 
 a{

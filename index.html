@@ -12,21 +12,30 @@
 <body>
     <div class="content-container">
         <nav id="content-navbar" class="content-navbar-container">
-            <div class="logo">L</div>
+            <div class="logo"><i class="fa-solid fa-l"></i><i class="fa-solid fa-o"></i><i class="fa-solid fa-g"></i><i class="fa-solid fa-o"></i></div>
             <ul class="buttons-list">
                 <a href="./index.html" class="button-nav"><i class="fa-solid fa-house-chimney-window"></i></a>
-                <a href="./settings.html" class="button-nav"><i class="fa-solid fa-gears"></i></a>
-                <a href="./create.html" class="button-nav"><i class="fa-solid fa-plus"></i></a>
+                <a href="./pages/settings.html" class="button-nav"><i class="fa-solid fa-gears"></i></a>
+                <a href="./pages/create.html" class="button-nav"><i class="fa-solid fa-plus"></i></a>
             </ul>
         </nav>
-        <div class="content">
+        <div id="content-text-main" class="content-text">
             <div class="search-container">
                 <input type="text" maxlength="10" class="search">
                 <button class="search-nav"><i class="fa-solid fa-magnifying-glass"></i></i></button>
-                <button id="saved-posts" class="save-nav"><i class="fa-solid fa-bookmark"></i></button>
+                <button id="saved-posts" class="save-nav"><i class="fa-solid fa-sliders"></i></button>
             </div>
         </div>
     </div>
+    <dialog id="delete-modal" class="modal-container">
+        <div class="modal-text">
+            <div class="text">Are u sure u want to delete this post?</div>
+        </div>
+        <ul class="modal-nav">
+            <button id="delete-modal-cancel" class="modal-button-nav">Cancel</button>
+            <button id="delete-modal-apply" class="modal-button-nav"><i class="fa-solid fa-trash"></i></button>
+        </ul>
+    </dialog>`
 </body>
 
 </html>

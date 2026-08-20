@@ -1,0 +1,81 @@
+@import url(./general.css);
+@import url(./post.css);
+
+.post-container{
+    color: white;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.post-container .post{
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px 20px 10px;
+    width: var(--post-width);
+    height: fit-content;
+    border: 1px solid;
+}
+
+.upper-text .text{
+    margin:10px 0px 10px;
+}
+
+.upper-text .logo{
+    font-size: 20px;
+}
+
+.upper-text .date{
+    font-size: 13px;
+    margin-left: 5px;
+}
+
+.upper-text .tittle{
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.upper-text .author{
+    margin-top: 5px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.upper-text .descr{
+    margin: 10px 0px 10px;
+    font-size: 20px;
+    text-indent: 10px;
+}
+
+.main-text .p{
+    margin: 10px 0px 10px;
+    font-size: 20px;
+    text-indent: 10px;
+}
+
+.p{
+    display: flex;
+    flex-direction: column;
+    gap:10px
+}
+
+.rating .tags{
+    font-size: 15px;
+    
+}
+
+.post-nav .likes{
+    display: flex;
+    flex-direction: row;
+    font-size: 20px;
+}
+
+.likes ul{
+    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    margin-left:10px;
+}
+

@@ -1,113 +1,95 @@
-import { printModal } from "./modal.js";
+import { modal } from "./modal.js";
+import { cut } from "./math.js";
 
 const post = function (arr) {
     if (arr === null || arr === undefined) {
         return '';
     }
-    let postContent = `<div id="postID${arr.postID}"class="post">
+    let postContent = `<div id="${arr.postID}"class="post">
         <div class="post-upper">
-            <div class = "post-upper-text">
-                <a href="#postID-${arr.postID}" id="content-extend" class="tittle">${arr.title}</a>
-                <div class="author">by.${arr.authorName}</div>
-                <div class="saved">${arr.savedPost}</div>
-                <div class="tags">${arr.tags}</div>
-            </div>
-            <div class="post-descr">   
-                <div class="descr">${arr.description}</div>
+            <div class = "upper-text">
+                <div class="tittle">${arr.postTittle}</div>
+                <div class="author">by. ${arr.authorName}</div>
+                <div class="tags">${arr.postTags}</div>
+                <div class="descr">${cut(arr.postDescr, 250)}</div>
             </div>
         </div> 
         <div class="post-nav">
             <button id = "save-nav" class="post-btn"><i class="fa-solid fa-bookmark"></i></button>
             <button id = "edit-nav" class="post-btn"><i class="fa-solid fa-pen"></i></button>
-            <button id = "remove-nav" class="post-btn"><i class="fa-solid fa-trash"></i></button>
+            <button id = "delete-nav" class="post-btn"><i class="fa-solid fa-trash"></i></button>
         </div> 
     </div>`
     return postContent;
 }
 
-function removePost(arr) {
-    arr.remove()
-}
-
 export function getData() {
     return fetch('./posts.json')
-        .then((responce) => { return responce.json() })
+        .then(responce => responce.json())
 }
 
-export function printPost(arr) {
-    const contentContainer = document.querySelector(".content");
+export function renderPosts(arr) {
+    const contentContainer = document.getElementById("content-text-main");
     contentContainer.innerHTML += post(arr)
 }
 
 export function eventHandler() {
-    const contentContainer = document.querySelector(".content");
-    const searchContainer = document.querySelector(".search-container")
+    const contentContainer = document.querySelector(".content-container"),
+        contentPosts = document.querySelector(".content-text"),
+        deleteModalDOM = document.getElementById("delete-modal");
 
-    contentContainer.addEventListener("click", e => {
-        const target = e.target
-        const link = target.closest("#content-extend")
-        if (!link) {
-            return;
-        }
-        const post = link.closest(".post")
-        const text = post.querySelector(".descr");
-        text.classList.toggle("extended")
-        post.classList.toggle("extended")
-    })
-    contentContainer.addEventListener("click", e => {
-        const target = e.target
-        const saveButton = target.closest("#save-nav");
-        if (!saveButton) {
-            return;
-        }
-        const post = saveButton.closest(".post")
-        const saveCounter = post.querySelector(".saved")
-        const postOjb = JSON.parse(localStorage.getItem(`${post.id}`))
+    const button1 = document.getElementById("delete-modal-apply");
+    const button2 = document.getElementById("delete-modal-cancel");
 
-        postOjb.savedPost = postOjb.savedPost === true ? false : true;
-        const postObjString = JSON.stringify(postOjb)
-        localStorage.setItem(`${post.id}`, postObjString)
-        const postPostObj = JSON.parse(localStorage.getItem(`${post.id}`))
-        saveCounter.textContent = postPostObj.savedPost
+    // deleteModalDOM.addEventListener("click", async (e) => {
+    //     const target = e.target;
+    //     const button1 = target.closest("delete-modal-apply");
+    //     const button2 = target.closest("delete-modal-cancel");
 
-    })
-    contentContainer.addEventListener("click", e => {
-        const target = e.target
-        const deleteButton = target.closest("#remove-nav");
-        if (!deleteButton) {
-            return;
-        }
-        const post = deleteButton.closest(".post")
-        localStorage.removeItem(`${post.id}`)
-        removePost(post)
-    })
+    //     const res = await modal(deleteModalDOM, button1, button2);
+    //     res ? deletePost(delet.closest(".post"), deleteModalDOM) : deleteModalDOM.close();
+    // })
 
-}
-
-export function eventHandlerSearch() {
-    const searchContainer = document.querySelector(".search-container")
-    searchContainer.addEventListener("click", (e) => {
+    contentPosts.addEventListener("click", async (e) => {
         const target = e.target;
-        const savedFilter = target.closest("#saved-posts")
-        const posts = document.querySelectorAll(".post")
-        if (!savedFilter) {
-            return
+        const delet = target.closest("#delete-nav"),
+            save = target.closest("#save-nav"),
+            edit = target.closest("#edit-nav"),
+            post = target.closest(".post-upper"),
+            postID = target.closest(".post");
+
+        if (delet) {
+            const button1 = "#delete-modal-apply"
+            const button2 = "#delete-modal-cancel"
+            const res = await modal(deleteModalDOM, button1, button2);
+            res ? deletePost(delet.closest(".post"), deleteModalDOM) : deleteModalDOM.close();
         }
-        let postsObj = getAllPostsFromLSByKey("postID")
-        postsObj.filter(p => p.savedPost === true)
+        if (post) {
+            goTo(postID)
+        }
     })
 
 }
 
-
-function getAllPostsFromLSByKey(key) {
-    const posts = []
-    for (let i = 0; i < localStorage.length; i++) {
-        const key = localStorage.key(i);
-        if (key.startsWith(key)) {
-            const post = JSON.parse(localStorage.getItem(key));
-            posts.push(post);
-        }
-    }
-    return posts;
+function deletePost(post, modal) {
+    modal.close()
+    const p = document.getElementById(`${post.id}`);
+    p.remove();
+    localStorage.removeItem(`${post.id}`);
 }
+
+function goTo(postID) {
+    const postData = JSON.parse(localStorage.getItem(`${postID.id}`))
+    const parsedTittle = postData.postTittle.split(" ")
+        .join(" ");
+    const link = `./pages/post.html?id=${postID.id}&tittled=${parsedTittle}`
+    window.location.href = link;
+}
+
+// function editPost(post) {
+
+// }
+
+// function savePost(post) {
+
+// }

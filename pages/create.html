@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>PostUrBrainsOut||DOM</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script type="module" src="../scripts/create.js" defer></script>
+    <script type="module" src="../scripts/preview.js" defer></script>
+    <script src="https://kit.fontawesome.com/4f31497266.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="content-container">
+        <nav id="content-navbar" class="content-navbar-container">
+            <div class="logo"><i class="fa-solid fa-l"></i><i class="fa-solid fa-o"></i><i class="fa-solid fa-g"></i><i
+                    class="fa-solid fa-o"></i></div>
+            <ul class="buttons-list">
+                <a href="../index.html" class="button-nav"><i class="fa-solid fa-house-chimney-window"></i></a>
+                <a href="./settings.html" class="button-nav"><i class="fa-solid fa-gears"></i></a>
+                <a href="./create.html" class="button-nav"><i class="fa-solid fa-plus"></i></a>
+            </ul>
+        </nav>
+        <div class="create-container">
+            <div class="create-text-container">
+                <div class="descr-container">
+                    <textarea id="descr" class="input descr" placeholder="Description..."></textarea>
+                </div>
+                <div id="preview" class="preview-container"></div>
+            </div>
+
+            <div class="create-nav-container">
+                <ul class="name-tittle-tags-container">
+                    <input id="author-name" class="input author" type="text" placeholder="Authors Name...">
+                    <input id="title" type="text" class="input tittle" placeholder="Tittle...">
+                    <div class="tags-container">
+                        <input id="tag" type="text" class="input tags" placeholder="Tags...">
+                    </div>
+                    <button id="create-info" class="btn"><i class="fa-regular fa-circle-question"></i>How to
+                        post?</button>
+                </ul>
+                <div class="nav-container">
+                    <button id="create-cancel" class="btn">cancel</button>
+                    <button id="create-apply" class="btn">apply</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <dialog id="create-modal-1" class="modal-container">
+        <div class="modal-text">
+            <div class="text">text is not empty</div>
+        </div>
+        <ul class="modal-nav">
+            <button id="cancel-create-modal2" class="modal-button-nav">Cancel</button>
+            <button id="apply-create-modal1" class="modal-button-nav">Ok</button>
+        </ul>
+    </dialog>
+    <dialog id="create-modal-2" class="modal-container big">
+        <div class="modal-text">
+            <div class="text">
+                <h1>HOW TO CREATE A POST – FEATURE OVERVIEW</h1>
+                <div>The user interacts with a clean, minimal form that includes:
+                    <ul>
+                        <li>Author Name – a simple text input</li>
+                        <li>Post Title – a simple text input</li>
+                        <li>Main Content Area – a large textarea where the user writes the full post content</li>
+                    </ul>
+                </div>
+                <h2>TAGS PARSING – FLEXIBLE INPUT, STRUCTURED OUTPUT</h2>
+                <div>User experience:
+                    <ul>
+                        <li>In the content area, the user can write tags either as plain words separated by spaces
+                            (example: javascript bundling performance) or with the # symbol (example: #javascript
+                            #bundling #performance)</li>
+                    </ul>
+                </div>
+                <div>The user interacts with a clean, minimal form that includes:
+                    <ul>
+                        <li>The system detects all tag-like words (starting with # or separated by spaces)</li>
+                        <li>It normalizes them into a clean array</li>
+                        <li>On the final screen, all tags are displayed uniformly like this:
+
+                            #javascript, #bundling, #treeshaking, #performance</li>
+                    </ul>
+                </div>
+
+                <h2>DESCRIPTION PARSING – INVISIBLE DELIMITERS TO PARAGRAPHS</h2>
+                <div>User experience:
+                    <ul>
+                        <li>The user writes the post description inside the same textarea</li>
+                        <li>To separate paragraphs, the user adds empty lines (double line breaks) – invisible but
+                            meaningful</li>
+                    </ul>
+                </div>
+                <div>The user interacts with a clean, minimal form that includes:
+                    <ul>
+                        <li>The system splits the text by double newline (two line breaks in a row)</li>
+                        <li>Each block becomes a separate paragraph element</li>
+                        <li>The final output is an array of paragraphs, each rendered as a distinct p tag</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <ul class="modal-nav">
+            <button id="info-button" class="modal-button-nav">!ok</button>
+        </ul>
+    </dialog>
+</body>
+
+</html>
