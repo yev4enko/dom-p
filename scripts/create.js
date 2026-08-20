@@ -28,8 +28,8 @@ createContainer.addEventListener("click", async (e) => {
     }
     if (cancelButton) {
         if (descr.length !== 0) {
-            const button1 = document.getElementById("apply-create-modal1"),
-                button2 = document.getElementById("cancel-create-modal2");
+            const button1 = "#apply-create-modal1",
+                button2 = "#cancel-create-modal2";
             const res = await modal(cancelModal1DOM, button1, button2)
             res ? window.location.href = "../index.html" : cancelModal1DOM.close()
         }
