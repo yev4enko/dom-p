@@ -1,0 +1,13 @@
+{
+    "id": 100,
+    "registered": false,
+    "logged": false,
+    "registeredAt": "",
+    "firstName": "",
+    "lastName": "",
+    "email": "",
+    "password": "",
+    "phone": "",
+    "resentPost": "",
+    "savedPosts": []
+}

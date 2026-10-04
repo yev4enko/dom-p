@@ -1,0 +1,67 @@
+@import url(../general.css);
+
+.login-container{
+
+    border:3px solid black;
+    background-color: white;
+    width: 600px;
+    position: fixed;
+    left:calc(100vw / 2 - 300px);
+    top:10px;
+    border-radius: 20px;
+    height: calc(100vh - 30px);
+}
+
+.login-input-wraper {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.login-input-wraper > input{
+    flex-grow: 1;
+    height: 50px;
+    border-radius: 40px;
+    padding: 0px 10px 0px;
+}
+
+
+#user-login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:50px;
+}
+
+.login-inputs-wraper{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}
+
+.login-title-wraper > *{
+    font-size: 80px;
+    font-weight: 900;
+}
+
+.login-nav-wraper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 400px;
+    padding: 0px 20px 0px;
+}
+
+.login-link-wraper > a{
+    text-decoration: underline
+;
+}
+
+.login-button-wraper > button{
+    height: 50px;
+    width: 200px;
+    border-radius: 30px;
+}

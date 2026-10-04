@@ -1,0 +1,15 @@
+@import url(./styles/normalize.css);
+@import url(./styles/general.css);
+@import url(./styles/authorization/login.css);
+@import url(./styles/authorization/register.css);
+@import url(./styles/authorization/user.css);
+@import url(./styles/coloring-sizing/coloring.css);
+@import url(./styles/modal-navbar/modal.css);
+@import url(./styles/modal-navbar/navbar.css);
+@import url(./styles/posts/authorsPosts.css);
+@import url(./styles/posts/post.css);
+@import url(./styles/toast.css);
+@import url(./styles/create.css);
+@import url(./styles/modal-navbar/search-stats.css);
+@import url(./styles/search.css);
+@import url(./styles/coloring-sizing/sizing.css);

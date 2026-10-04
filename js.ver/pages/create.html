@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>PostUrBrainsOut||DOM</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script type="module" src="../scripts/create.js" defer></script>
+    <script type="module" src="../scripts/navbar.js" defer></script>
+    <script type="module" src="../index.js" defer></script>
+    <script src="https://kit.fontawesome.com/4f31497266.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav id="navbar-container" class="navbar-container">
+    </nav>
+    <div class="create-post-container">
+        <form id = "create-form">
+        <div class="post-info">
+            <input id="new-slug" type="text" placeholder="Post slug">
+            <input id="new-title" type="text" placeholder="Post title">
+            <input id="new-category" type="text" placeholder="Category">
+            <input id = "new-content" type="text" placeholder="CONTENT">
+        </div>
+        <div class="post-media">
+            <input id="new-imageLink" type="text" placeholder="Image URL">
+        </div>
+        <div class="post-metadata">
+            <input id="new-tags" type="text" placeholder="Tags">
+        </div>
+        <div class="post-actions">
+            <button id="create-post" type="button">Publish Post</button>
+        </div>
+        </form>
+    </div>
+</body>
+
+</html>

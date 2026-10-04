@@ -1,0 +1,61 @@
+.register-container{
+
+    border:3px solid black;
+    background-color: white;
+    width: 600px;
+    position: fixed;
+    left:calc(100vw / 2 - 300px);
+    top:10px;
+    border-radius: 20px;
+    height: calc(100vh - 30px);
+    padding: 60px;
+}
+
+.register{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.register > .login-title-wraper,
+.register > .register-inputs{
+    align-items: center;
+}
+
+.register > *{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}
+
+.register-input-wraper {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;    
+}
+
+
+ .register-input-wraper > input{
+    width: 400px;;
+    height: 50px;
+    padding: 0px 10px 0px;
+    border-radius: 40px;
+    gap:5px;
+}
+
+.register-nav {
+    flex-grow: 1;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0px 20px 0px;
+}
+
+
+.register-nav-btn-wraper > button{
+    height: 50px;
+    width: 200px;
+    border-radius: 20px;
+}

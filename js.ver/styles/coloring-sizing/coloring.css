@@ -1,0 +1,77 @@
+@import url(../general.css);
+
+body{
+    background-color: var(--body-color);
+
+}
+
+.search{
+    background-color: var(--post-background);
+}
+
+.navbar-container{
+    background-color: var(--nav-background);
+}
+
+.navbar-section-title > hr{
+    color:var(--nav-line-color)
+}
+
+.navbar-section-title > span{
+    color: var(--nav-font-color);
+}
+
+.navbar-section-button-wraper > button > i{
+    color:var(--nav-i-color)
+}
+.navbar-section-button-wraper > button > span{
+    color:var(--nav-span-color)
+}
+
+.navbar-section-button-wraper > button{
+    background-color: var(--nav-background);
+} 
+.navbar-container:hover button{
+    background-color: var(--nav-btn-background);
+} 
+
+.navbar-section-button-wraper:active > button {
+    background-color: var(--nav-btn-active);
+}
+
+.navbar-section-button-wraper:hover > button {
+    background-color: var(--nav-btn-hover);
+}
+
+.post{
+    background-color: var(--post-background);
+}
+
+.post-section.title{
+    color: var(--color-title);
+}
+
+.post-section.author{
+    color: var(--color-author);
+}
+.post-section.content{
+    color: var(--color-content);
+}
+
+.post-section.tags{
+    color: var(--color-tags);
+}
+
+.post-section-button-wraper > button > i{
+    color: var(--post-nav-span-color);
+}
+
+.post-section-button-wraper > button{
+    background-color:   var(--post-btn-background);
+}
+.post-section-button-wraper > button:hover {
+    background-color: var(--post-btn-hover);
+}
+.post-section-button-wraper > button:active {
+    background-color: var(--post-btn-active);
+}

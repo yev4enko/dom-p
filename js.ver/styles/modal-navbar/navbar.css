@@ -1,0 +1,97 @@
+@import url(../general.css);
+
+.navbar-container {
+    overflow: hidden;
+
+    border-radius: 20px;
+    position: fixed;
+    height: calc(100vh - 20px);
+    left: 10px;
+    top:10px;
+    
+    display: flex;
+    flex-direction: column;
+    width: 70px;
+
+    transition: width 0.3s ease;
+    gap: 20px;
+    padding: 10px 15px 10px; 
+    z-index: 10;
+}
+
+.navbar-container:hover{
+
+    width: 200px;
+}
+
+.navbar-container:hover > .navbar-section:not(.system) > .navbar-section-buttons > .navbar-section-button-wraper {
+    width: 100%;
+}
+
+.navbar-section{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
+
+.navbar-section-buttons{
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap:8px;
+}
+
+.navbar-section-button-wraper{
+    width: 40px;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.navbar-section-button-wraper > button{
+    padding-right: 10px;
+    display: flex;
+    flex-direction: row;
+    border-radius: 20px;
+    height: 40px;
+    align-items: center;
+    flex:1;
+    outline: none;
+    border: none;
+}
+
+.navbar-section-button-wraper > button > i{
+    height: 100%;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-section-button-wraper > button > span{
+    margin-left: auto;
+}
+
+
+.navbar-section-title{
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+}
+
+.navbar-section-title > hr{
+    min-width: 50px;
+    flex-grow: 1;
+}
+
+.navbar-section-title > span{
+    margin-left: auto;
+}
+
+.navbar-section.system > .navbar-section-buttons{
+    flex-direction: row;
+}

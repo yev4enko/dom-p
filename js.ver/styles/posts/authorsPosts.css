@@ -1,0 +1,49 @@
+.authors-posts-container{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}
+.authors-posts-container .post{
+    display: flex;
+    flex-direction: row;
+}
+
+
+.authors-posts-container .post{
+    height: 140px;
+    overflow: hidden;
+    transition: height 0.3s ease;
+}
+
+.authors-posts-container .post.open{
+    height: 400px;
+}
+
+.authors-posts-container .post > *{
+    display: flex;
+    flex-direction: column;
+}
+
+.ap-post-title-image{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.ap-post-title-image .authors-post-text-wraper{
+    margin: 30px ;
+    font-size: large;
+}
+
+.authors-post-image > img{
+    height: 100px;
+}
+
+.ap-post-btn > *{
+
+    height: 40px;
+    width: 40px;
+    border-radius:10px;
+    
+}

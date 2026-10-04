@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>PostUrBrainsOut||DOM</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script type="module" src="./index.js" defer></script>
+    <script type="module" src="./scripts/posts.js" defer></script>
+    <script type="module" src="./scripts/navbar.js" defer></script>
+    <script type="module" src="./scripts/search.js" defer>    </script>
+    <script type="module" src="./scripts/toast.js" defer>    </script>
+    <script src="https://kit.fontawesome.com/4f31497266.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav id="navbar-container" class="navbar-container">
+    </nav>
+    <div id="toast" class="toast-main-container">
+        <div class = "toast-section">
+            <div class="warning-cirle">!</div>
+            <div class="toast-text">U must be logged in, to do this operation" </div>
+            <div class ="toast-button">
+                <button id = "toast-closer">X</button>
+            </div>    
+        </div>
+    </div>
+    <div class="content-container">
+        <div class="content-container-upper-section">
+            <div id="search-container" class="search-container">
+            </div>
+            <div id="posts-container" class="posts-container">
+            </div>
+        </div>
+        <div id="stats-container" class="stats-container">
+            <!-- <div class="search-container">
+            </div>
+            <div class="stats-container">
+            </div>
+            <div class="recent-post-conteiner">
+                 -->
+        </div>
+    </div>
+    </div>
+    <dialog id="image-modal" class="modal-container">
+    </dialog>
+    <dialog id="delete-modal" class="modal-container">
+    </dialog>
+    <dialog id="info-modal" class="modal-container"></dialog>
+</body>
+
+</html>

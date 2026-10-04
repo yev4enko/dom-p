@@ -1,0 +1,10 @@
+CRU(u)D nabuducnost'xdd
+
+get "/" - res.sendFile(index.txt) - main page responce
+get "/profile" - cookies sessionID if(true) - res.sendfile(profile.html) esle res.redirect(login.html)
+post "/auth" - check
+post "reg" - check if(false) const {email,name,phoneNum... etc} -> req.body -> registration -> cooCkie's sessionID true
+
+get "/post > thru :postID" ==> /post/"numbder" or /post > GET /post?id=123&name=Artem"
+
+get "/settings" - localStorage

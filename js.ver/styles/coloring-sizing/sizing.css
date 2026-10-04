@@ -1,0 +1,43 @@
+/* /* Small    sm    ≥576px
+Medium    md    ≥768px
+Large    lg    ≥992px
+Extra large    xl    ≥1200px */
+
+
+/* @media (width < 1200px) {
+    .search,
+    .post{
+        width: 750px;
+    }
+}
+
+@media (width < 1070px) {
+    .search,
+    .post{
+        width: 680px;
+    }
+/* } */
+ /* @media (width < 992px) {
+    .posts-container,
+.post-container,
+.authors-posts-container,
+.saved-posts-container,
+.search-container,
+.user-information-container
+{
+    
+    margin-left: 100px;
+}
+.search,
+.post{
+    max-width: 600px;
+} 
+.search-container,
+.posts-container{
+    width: fit-content;
+}
+.content-container{
+    width: fit-content;
+} */
+
+ 
