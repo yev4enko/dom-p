@@ -1,6 +1,6 @@
 
 import { localStorageAPI } from "./api/localStorageAPI.js";
-import {renderRecentPosts, renderStats, renderSearch, renderNavbar, renderTheme, renderPosts } from "./scripts/UI/ui.js";
+import {renderLogin, renderRecentPosts, renderStats, renderSearch, renderNavbar, renderTheme, renderPosts } from "./scripts/UI/ui.js";
 
 const MAX_TEXT_LENGTH = 300;
 
@@ -69,6 +69,7 @@ async function init() {
         renderSearch();
       //  renderStats();
     }
+    
 }
 
 init();

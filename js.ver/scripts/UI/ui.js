@@ -189,3 +189,19 @@ export const renderRecentPosts = () => {
     }
 
 }
+
+export const renderLogin = () => {
+    DOMElements.loginContainer.innerHTML = UIForms.loginForm
+}
+
+export const renderPost = (link) => {
+
+    const postID = link.get("postID");
+    const action = link.get("action");
+
+    const data = localStorageAPI.getDataById("users_posts", parseInt(postID))
+
+    console.log(postID)
+
+    DOMElements.postContainer.innerHTML = UIForms.postForm(data)
+}

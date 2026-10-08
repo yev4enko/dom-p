@@ -9,6 +9,13 @@
     margin-left: calc(100vw / 2 - 400px);
 }
 
+.post-container{
+     margin-left: calc(100vw / 2 - 400px);
+}
+
+.authors-posts-container{
+    margin-left: calc(100vw / 2 - 400px);
+}
 
 .post{
     margin-top: 10px;

@@ -1,5 +1,4 @@
 .register-container{
-
     border:3px solid black;
     background-color: white;
     width: 600px;
@@ -8,54 +7,180 @@
     top:10px;
     border-radius: 20px;
     height: calc(100vh - 30px);
-    padding: 60px;
-}
-
-.register{
     display: flex;
     flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+}
+
+
+
+.register-checker{
+    height: 0px;
+    overflow: hidden;
+}
+
+.register-checker:is(.password1, .password2, .email, .phone).open{
+    height: fit-content;
+}
+
+.register-checker-status > span{
+   color: red;
+}
+
+.register-checker-status.true > span{
+    color: green
+}
+
+
+.register-form{
+    height: 100%;
+    width: 100%;
+    padding: 40px 10px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ }
+
+.register-form > *{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
+
+.register-form > .register-input-sections{
+    flex-direction: column;
+    align-items: center;
     gap: 20px;
 }
 
-.register > .login-title-wraper,
-.register > .register-inputs{
+.register-input-section {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
     align-items: center;
 }
 
-.register > *{
-    flex-grow: 1;
+.register-input-wraper{
+    width: 100%;
+    height: fit-content;
+    border:2px solid black;
+    border-radius: 20px;
     display: flex;
-    flex-direction: column;
-    gap:20px;
+    padding: 3px 10px 3px;
+    align-items: center;
+    
 }
 
-.register-input-wraper {
+.register-input-wraper:is(.email ,.password1, .password2, .firstname, .secondname , .phone).invalid{
+    border:2px solid red
+}
+
+.register-input-wraper:is(.email ,.password1, .password2, .firstname, .secondname , .phone).invalid{
+    border:2px solid red
+}
+
+
+.register-input-section:has(> .register-input-wraper.invalid) > .register-input-title-wraper{
+    color: red;
+}
+
+.register-input-wraper > input{
     flex-grow: 1;
-    display: flex;
-    flex-direction: column;    
+    border: none;
+    height: 40px;
 }
 
-
- .register-input-wraper > input{
-    width: 400px;;
-    height: 50px;
-    padding: 0px 10px 0px;
-    border-radius: 40px;
-    gap:5px;
+input:focus {
+    outline: none;
 }
 
-.register-nav {
-    flex-grow: 1;
-    margin-top: 40px;
+.register-checker > *{
+    height: 30px;
+}
+
+.register-title-section{
+    font-size: 80px;
+    font-weight: 600;
+}
+
+.register-input-title-wraper{
+   margin-right: auto;
+   padding-left: 10px;
+}
+
+.register-navigation-section{
+    margin-top: 20px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 0px 20px 0px;
 }
 
-
-.register-nav-btn-wraper > button{
-    height: 50px;
-    width: 200px;
+.register-navigation-button-wraper >button{
+    height: 40px;
+    width: 100px;
     border-radius: 20px;
+    border: none;
 }
+
+.register-message-section{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.register-message-section > *{
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+}
+
+.register-message-wraper:is(.empty, .validation).open{
+    padding: 3px 10px 3px;
+    height: fit-content;
+}
+
+.register-input-wraper > button{
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 40px;
+    border: none;
+}
+
+
+.register-checker{
+    margin-right: auto;
+    margin-top: 10px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 100%;
+    overflow: hidden;
+    transition: height 0.3s ease;
+    background-color: antiquewhite;
+    border-radius: 10px;
+    height: 0;
+    transition: height 0.2s ease, padding 0.3s ease;
+}
+
+.register-checker:is(.email).open{
+    height: 80px;
+    padding: 10px 5px 10px;
+}
+.register-checker:is(.password1).open{
+    height: 170px;
+    padding: 10px 5px 10px;
+}
+
+.register-checker:is(.password2).open{
+    height: 80px;
+    padding: 10px 5px 10px;
+}
+
+.register-checker:is(.phone).open{
+    height: 80px;
+    padding: 10px 5px 10px;
+}
+

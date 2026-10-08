@@ -14,28 +14,12 @@ DOMElements.postsContainer.addEventListener("click", async (e) => {
         postDelete = t.closest("#post-delete"),
         postEdit = t.closest("#post-edit"),
         postSave = t.closest("#post-save"),
-        а = t.closest("#upwote"),
+        postUpwote = t.closest("#upwote"),
         postDownwote = t.closest("#downwote")
 
     if (post && !postDelete && !postEdit && !postSave && !postDownwote && !postUpwote) {
-        UAChecker.updateUserAccountData("resentPost", post.id)
+        UAChecker.updateUserAccountData("resentPost", parseInt(post.id))
         goToPost(post.id)
-    }
-
-    if (postDelete) {
-        UAChecker.isLoggedIn() ? goToPostEdit(post.id) : openToast()
-    }
-    if (postEdit) {
-        UAChecker.isLoggedIn() ? goToPostEdit(post.id) : openToast()
-    }
-    if (postSave) {
-        UAChecker.isLoggedIn() ? goToPostEdit(post.id) : openToast()
-    }
-    if(postDownwote){
-        UAChecker.isLoggedIn() ? goToPostEdit(post.id) : openToast()
-    }
-     if(postUpаwote){
-        UAChecker.isLoggedIn() ? goToPostEdit(post.id) : openToast()
     }
 
 })
@@ -46,7 +30,7 @@ function goToPost(postID) {
     window.location.href = link
 }
 
-const goToPostEdit = (postID) => {
-    const link = `../pages/post.html?postID=${postID}&action=edit`
-    window.location.href = link
-}
+// const goToPostEdit = (postID) => {
+//     const link = `../pages/post.html?postID=${postID}&action=edit`
+//     window.location.href = link
+// }

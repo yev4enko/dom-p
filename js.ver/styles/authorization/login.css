@@ -1,67 +1,170 @@
 @import url(../general.css);
 
 .login-container{
-
     border:3px solid black;
     background-color: white;
     width: 600px;
+    height: 100%;
     position: fixed;
     left:calc(100vw / 2 - 300px);
     top:10px;
     border-radius: 20px;
     height: calc(100vh - 30px);
-}
-
-.login-input-wraper {
-    width: 400px;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
+.login-checker{
+    margin-right: auto;
+    margin-top: 10px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 100%;
+    overflow: hidden;
+    transition: height 0.3s ease;
+    background-color: antiquewhite;
+    border-radius: 10px;
+    height: 0;
+    transition: height 0.2s ease, padding 0.3s ease;
+}
+.login-checker:is(.email).open{
+    height: 80px;
+    padding: 10px 5px 10px;
+}
+.login-checker:is(.password).open{
+    height: 170px;
+    padding: 10px 5px 10px;
+}
+
+.checker-status{
+    height:30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.checker-status > span{
+    color: red;
+}
+
+.checker-status.true > span{
+    color: green
+}
+
+.login-form {
+    height: 100%;
+    width: 100%;
+    padding: 40px 10px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-form > *{
+    width: 80%;
+    display: flex;
+    /* border: 1px solid black; */
+    justify-content: center;
+}
+
+.login-form > .login-input-sections{
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.login-input-section {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-input-wraper{
+    width: 100%;
+    height: fit-content;
+    border:2px solid black;
+    border-radius: 20px;
+    display: flex;
+    padding: 3px 10px 3px;
+    align-items: center;
+    
+}
+
+.login-input-wraper:is(.email ,.password).invalid {
+    border:2px solid red
+}
+
+.login-input-section:has( > .login-input-wraper.invalid ) > .login-input-title-wraper{
+    color: red;
+}
 
 .login-input-wraper > input{
     flex-grow: 1;
-    height: 50px;
-    border-radius: 40px;
-    padding: 0px 10px 0px;
+    border: none;
+    height: 40px;
 }
 
-
-#user-login{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap:50px;
+input:focus {
+    outline: none;
 }
 
-.login-inputs-wraper{
-    display: flex;
-    flex-direction: column;
-    gap:20px;
+.login-checker > *{
+    height: 30px;
 }
 
-.login-title-wraper > *{
+.login-title-section{
     font-size: 80px;
-    font-weight: 900;
+    font-weight: 600;
 }
 
-.login-nav-wraper {
+.login-input-title-wraper{
+   margin-right: auto;
+   padding-left: 10px;
+}
+
+.login-navigation-section{
+    margin-top: 20px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+.login-navigation-button-wraper >button{
+    height: 40px;
+    width: 100px;
+    border-radius: 20px;
+    border: none;
+}
+
+.login-message-section{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-message-section > *{
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+}
+
+.login-message-wraper:is(.empty, .validation, .login-error).open{
+    padding: 3px 10px 3px;
+    height: fit-content;
+}
+
+.login-input-wraper > button{
+    height: 40px;
+    width: 40px;
+    display: flex;
     align-items: center;
-    width: 400px;
-    padding: 0px 20px 0px;
+    justify-content: center;
+    border-radius: 40px;
+    border: none;
 }
 
-.login-link-wraper > a{
-    text-decoration: underline
-;
-}
-
-.login-button-wraper > button{
-    height: 50px;
-    width: 200px;
-    border-radius: 30px;
+.login-input-sections{
+    margin-top: auto;
 }

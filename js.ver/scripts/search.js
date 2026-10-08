@@ -28,35 +28,35 @@ const search = (searchInput) => {
     return searchOutput;
 }   
 
-mainStats.addEventListener("click", (e)=>{
-    const t = e.target;
-    const oppenerButton = t.closest("#main-stats-oppener");
-    if(oppenerButton){
-        mainStats.classList.toggle("open");
-    }
-})
+// mainStats.addEventListener("click", (e)=>{
+//     const t = e.target;
+//     const oppenerButton = t.closest("#main-stats-oppener");
+//     if(oppenerButton){
+//         mainStats.classList.toggle("open");
+//     }
+// })
 
-topStats.addEventListener("click", (e)=>{
-    const t = e.target;
-    const oppenerButton = t.closest("#top-stats-oppener");
-    if(oppenerButton){
-        topStats.classList.toggle("open");
-    }
-})
+// topStats.addEventListener("click", (e)=>{
+//     const t = e.target;
+//     const oppenerButton = t.closest("#top-stats-oppener");
+//     if(oppenerButton){
+//         topStats.classList.toggle("open");
+//     }
+// })
 
-allStatsContainer.addEventListener("click", (e)=>{
-    const t = e.target;
-    const oppenerButton = t.closest("#stats-oppener");
-    if(oppenerButton){
-        allStatsContainer.classList.toggle("open");
-    }
-})
+// allStatsContainer.addEventListener("click", (e)=>{
+//     const t = e.target;
+//     const oppenerButton = t.closest("#stats-oppener");
+//     if(oppenerButton){
+//         allStatsContainer.classList.toggle("open");
+//     }
+// })
 
-DOMElements.recentPostContainer.addEventListener("click", (e)=>{
-    const t = e.target;
-    const button = t.closest("#recent-oppener")
-    const m = document.querySelector(".recent-content")
-    if(button){
-        m.classList.toggle("open");
-    }
-})
+// DOMElements.recentPostContainer.addEventListener("click", (e)=>{
+//     const t = e.target;
+//     const button = t.closest("#recent-oppener")
+//     const m = document.querySelector(".recent-content")
+//     if(button){
+//         m.classList.toggle("open");
+//     }
+// })

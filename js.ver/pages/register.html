@@ -14,44 +14,91 @@
 <body>
     <nav id="navbar-container" class="navbar-container">
     </nav>
-    <div id = "register-container" class="register-container">
-        <form id="register" class="register">
-            <div class="login-title-wraper">
+    <div id="register-container" class="register-container">
+        <form id="register" class="register-form">
+            <div class="register-title-section">
                 <div id="register-title"><span>SIGN UP</span></div>
             </div>
-            <div class="register-inputs">
-                <div class="register-input-wraper">
-                    <div class="star">*</div>
-                    <input id="firstname-register" placeholder="FIRSTNAME" type="text">
+            <div class="register-input-sections">
+                <div class="register-input-section firstname">
+                    <div class="register-input-title-wraper"><span>FirstName*</span></div>
+                    <div class="register-input-wraper firstname">
+                        <input id="register-firstname" type="text">
+                    </div>
                 </div>
-                <div class="register-input-wraper">
-                    <div class="star">*</div>
-                    <input id="lastname-register" placeholder="LASTNAME" type="text">
+                <div class="register-input-section secondname">
+                    <div class="register-input-title-wraper"><span>Secondname*</span></div>
+                    <div class="register-input-wraper secondname">
+                        <input id="register-secondname" type="text">
+                    </div>
                 </div>
-                <div class="register-input-wraper">
-                    <div class="star">*</div>
-                    <input id="phone-register" placeholder="PHONE-NUMBER" type="text">
+                <div class="register-input-section email">
+                    <div class="register-input-title-wraper"><span>E-mail*</span></div>
+                    <div class="register-input-wraper email">
+                        <input id="register-email" type="text">
+                    </div>
+                    <div class="register-checker email">
+                        <div>Email must:</div>
+                        <div class="register-checker-status" id="register-email-validation"><span><i class="fa-solid fa-circle"></i></span> : contain the format: email-name@company.domain</div>
+                    </div>
                 </div>
-                <div class="register-input-wraper">
-                    <div class="star">*</div>
-                    <input id="email-register" placeholder="E-MAIL" type="text">
+                <div class="register-input-section phonenumber">
+                    <div class="register-input-title-wraper"><span>Phone*</span></div>
+                    <div class="register-input-wraper phone">
+                        <input id="register-phone" type="text">
+                    </div>
+                    <div class="register-checker phone">
+                        <div>Phone number must:</div>
+                        <div class="register-checker-status" id="register-phone-validation"><span><i class="fa-solid fa-circle"></i></span> : be in the format: +123 456 7890</div>
+                    </div>
                 </div>
-                <div class="register-input-wraper">
-                    <div class="star">*</div>
-                    <input id="password-register1" placeholder="PASSWORD" type="text">
+                <div class="register-input-section password1">
+                    <div class="register-input-title-wraper"><span>Password*</span></div>
+                    <div class="register-input-wraper password1">
+                        <input id="register-password1" maxlength="16" type="password" placeholder="Enter your Password">
+                        <button id="password1-register-peek"><i class="fa-solid fa-eye-slash"></i></button>
+                    </div>
+                    <div class="register-checker password1">
+                        <div>Password must:</div>
+                        <div class="register-checker-status" id="register-password-length"><span><i class="fa-solid fa-circle"></i></span> : be between 6
+                            and 16 symbols!</div>
+                        <div class="register-checker-status" id="register-password-symbols"><span><i class="fa-solid fa-circle"></i></span> : have at
+                            least one special symbol!</div>
+                        <div class="register-checker-status" id="register-password-number"><span><i class="fa-solid fa-circle"></i></span> : have at
+                            least one number</div>
+                        <div class="register-checker-status" id="register-password-upperchar"><span><i class="fa-solid fa-circle"></i></span> : have at
+                            least one uppercase character
+                        </div>
+                    </div>
                 </div>
-                <div class="register-input-wraper">
-                    <div class="star">*</div>
-                    <input id="password-register2" placeholder="PASSWORD" type="text">
+                <div class="register-input-section password2">
+                    <div class="register-input-title-wraper"><span>Password*</span></div>
+                    <div class="register-input-wraper password2">
+                        <input id="register-password2" maxlength="16" type="password" placeholder="Repeat your Password">
+                        <button id="password2-register-peek"><i class="fa-solid fa-eye-slash"></i></button>
+                    </div>
+                    <div class="register-checker password2">
+                        <div>Password must:</div>
+                        <div class="register-checker-status" id="register-password-equal"><span><i class="fa-solid fa-circle"></i></span> : be the same
+                            as Password1</div>
+                    </div>
                 </div>
             </div>
-
-            <div class="register-nav">
-                <div class="register-nav-btn-wraper">
-                    <button id="cancel-register">CANCEL</button>
+            <div class="register-message-section">
+                <div class="register-message-wraper empty">
+                    <div>Please fill in all required fields (*).</div>
                 </div>
-                <div class="register-nav-btn-wraper">
-                    <button id="sign-up">CREATE USER</button>
+                <div class="register-message-wraper validation">
+                    <div>Please check the highlighted fields. Validation Error!</div>
+                </div>
+
+            </div>
+            <div class="register-navigation-section">
+                <div class="register-navigation-button-wraper sign-in">
+                    <button id="login-redir">LOGIN</button>
+                </div>
+                <div class="register-navigation-button-wraper sign-up">
+                    <button id="signup">CREATE ACCOUNT</button>
                 </div>
             </div>
         </form>

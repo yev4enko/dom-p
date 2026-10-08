@@ -1,4 +1,5 @@
 import { localStorageAPI } from "../../api/localStorageAPI.js"
+import { UAChecker } from "../../api/userAccountChecker.js"
 
 export const UIForms = (() => {
     const navbarForm =
@@ -64,9 +65,10 @@ export const UIForms = (() => {
                 lastname: "DUMMER"
             }
         }
-
-        const postForm =
-            `
+        let postForm = ``;
+        if (UAChecker.getUserAccountParams("logged") === true) {
+            postForm =
+                `
         <div id="${post.id}" class="post">
             <div class="post-section-upper">
                 <div class="post-section title">
@@ -126,8 +128,47 @@ export const UIForms = (() => {
                     </div>
                 </div>
             </div>
+        </div>    `}
+        else if(!UAChecker.getUserAccountParams("logged") === true){
+            postForm = `
+            
+        <div id="${post.id}" class="post">
+            <div class="post-section-upper">
+                <div class="post-section title">
+                    <div class="post-section-text-wraper">
+                        <div id="title">${post.title}</div>
+                    </div>
+                </div>
+                <div class="post-section author">
+                    <div class="post-section-text-wraper">
+                        <div id="author">by<span><a href="../pages/author.html?authorID=${post.userId}"
+                                    class="post-author">
+                                    ${user.firstname.toUpperCase()} ${user.lastname.toUpperCase()} </a></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="post-section image">
+                    <div class="post-section-image-wraper">
+                        <img id="post-image" class="image" src="${post.image}">
+                    </div>
+                </div>
+
+                <div class="post-section content">
+                    <div class="post-section-text-wraper">
+                        <div id="post-content">${post.content}</div>
+                    </div>
+                </div>
+
+                <div class="post-section tags">
+                    <div class="post-section-text-wraper">
+                        <div id="post-tags">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>    
-            `
+            `}
         return postForm
     }
 
@@ -394,7 +435,70 @@ export const UIForms = (() => {
         </div>`
         return form;
     }
+
+
+    const loginForm = `
+        <form id="login-form" class="login-form">
+            <div class="login-title-section">
+                <div id="login-title"><span>Sign in</span></div>
+            </div>
+            <div class="login-input-sections">
+                <div class="login-input-section email">
+                    <div class="login-input-title-wraper email"><span>E-mail*</span><span class="email error"></span>
+                    </div>
+                    <div class="login-input-wraper email">
+                        <input id="login-email" type="text" placeholder="Enter E-mail">
+                    </div>
+                    <div class="login-checker email">
+                        <div>Email must:</div>
+                        <div class="checker-status" class="login-input" id="login-email-validation"><span><i class="fa-solid fa-circle"></i></span>: contain the format: email-name@company.domain</div>
+                    </div>
+                </div>
+                <div class="login-input-section password">
+                    <div class="login-input-title-wraper password"><span>Password*</span><span class="password error"></span>
+                    </div>
+                    <div class="login-input-wraper password">
+                        <input maxlength=16 class="login-input" id="login-password" type="password" placeholder="Enter password">
+                        <button id="password-peek"><i class="fa-solid fa-eye-slash"></i></button>
+                    </div>
+                    <div class="login-checker password">
+                        <div>Password must:</div>
+                        <div class="checker-status" id="login-password-length"><span><i class="fa-solid fa-circle"></i></span>:be between 6 and 16
+                            symbols!</div>
+                        <div class="checker-status" id="login-password-symbols"><span><i class="fa-solid fa-circle"></i></span>:have at least one
+                            special symbol!</div>
+                        <div class="checker-status" id="login-password-number"><span><i class="fa-solid fa-circle"></i></span>:have at least one number
+                        </div>
+                        <div class="checker-status" id="login-password-upperchar"><span><i class="fa-solid fa-circle"></i></span>:have at least one
+                            uppercase character
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="login-message-section">
+                <div class="login-message-wraper empty">
+                    <div>Please fill in all required fields (*).</div>
+                </div>
+                <div class="login-message-wraper validation">
+                    <div>Please check the highlighted fields. Validation Error!</div>
+                </div>
+                <div class="login-message-wraper login-error">
+                    <div>Incorrect email/login or password.</div>
+                </div>
+                
+            </div> 
+
+            <div class="login-navigation-section">
+                <div class="login-navigation-button-wraper">
+                    <button id="signup-login-redir">SIGN_UP</button>
+                </div>
+                <div class="login-navigation-button-wraper">
+                    <button id="ffff">LOG_IN</button>
+                </div>
+            </div>
+        </form>`
     return {
+        loginForm,
         recentPostForm,
         recentEndefinedPostForm,
         toastErrorForm,

@@ -12,7 +12,7 @@ const k = localStorageAPI.getDataByPId("users_posts", parseInt(data), "userId")
 
 k.reverse().forEach((post) => { 
         
-    DOMElements.authorsPostsContainer.innerHTML += UIForms.authorsPostForm(post) })
+DOMElements.authorsPostsContainer.innerHTML += UIForms.authorsPostForm(post) })
 
 const authorsPostContainer = document.querySelector(".authors-posts-container")
 
